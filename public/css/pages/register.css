@@ -1,0 +1,138 @@
+#create{
+    background: white;
+    color: black;
+    border: 2px solid white;
+  }
+  
+  #create:hover{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    font-weight: bold;
+  }
+  
+  #edit{
+    background: white;
+    color: black;
+    border: 2px solid white;
+  }
+  
+  #edit:hover{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    font-weight: bold;
+  }
+  
+  #profile{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    margin-bottom: 30px;
+  }
+  
+  #profile:hover{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  #view{
+    background: white;
+    color: blue;
+    border: 2px solid blue;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  #view:hover{
+    background: rgba(0, 0, 255, 0.2);
+    color: blue;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 5px;
+  }
+  
+  #name{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  #gender{
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  
+  #contact{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  #email{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  #address{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #city{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #state{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  #discard{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    font-size: 20px;
+  }
+  
+  #discard:hover{
+    background: white;
+    color: black;
+    border: 2px solid white;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  
+  #submit{
+    background: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 3px;
+    float: right;
+    width: 70px;
+  }
+  
+  #submit:hover{
+    background: black;
+    border: 3px solid black;
+    border-radius: 3px;
+    color: white;
+  }
+  
