@@ -1,241 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenUps | Sale:Houses & Apartment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/forms/forms.css">
-<style type="text/css">
-  input[type="number"],input[type="email"]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid black;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+    <link rel="stylesheet" href="./public/css/forms/forms.css">
+    <script src="forms.js"></script>
+
+   <style>
+    .modal-body{
+    height: 800px;
+    border:500px;
   }
-</style>
-
-  </head>
-
-
-  <body>
-    <nav class="navbar navbar-expand-sm  fixed-top">
-      <a href="#"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
-      <a class="navbar-brand" href="#" style="font-size: 20px;">Logo</a>
-    </nav>
+  .cont{
+    padding:5px;
+    margin: 25px;
+  }
+   </style>
+</head>
+<body>
+     
+<nav class="navbar navbar-expand-sm  fixed-top">
+  <a href="./routes.php?sell"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
+  <a class="navbar-brand" href="./"><b style="font-size: 25px;font-family: Jokerman;color:#000033;">OpenUps</b></a>
+</nav>
     <div class="container-fliud">
-      <div style="text-align:center;">
-            <h2 style="color:black">Post Your Ad</h2>
-      </div>
-      <section class="container-fliud">
+        <div style="text-align:center;">
+          <h2 style="color:black">Post Your Ad</h2>
+
+        </div>
+        <section class="container-fliud">
           <section class="row justify-content-center">
             <section class="col-12 col-sm-2 col-md-8 col-lg-6">
-          <form>
-          
-            <div class="form-container" >
-            <p class="headtitle">Properties/For Sale : Houses & Apartments</p>
-            <label style="color:grey;font-weight:normal;">Type*</label><br>
-            <label class="container2">Apartment
-            <input id="type" type="radio" name="radio2" value="Apartment">
-            <span class="checkmark2"></span>
-            </label>
-            <label class="container2">Builder Floor
-            <input id="type" type="radio" name="radio2" value="Builder Floor">
-            <span class="checkmark2"></span>
-            </label>
-            <label class="container2">Villas and Houses
-            <input id="type" type="radio" name="radio2"value="Villas and Houses">
-            <span class="checkmark2"></span>
-            </label>
-            <label class="container2">Farm Houses
-            <input id="type" type="radio" name="radio2" value="Farm Houses">
-            <span class="checkmark2"></span>
-            </label>
-            <br>
-
-            <div class="Bedrooms">
-            <label style="color:grey;font-weight:normal;">Bedrooms</label><br>
-            <label class="container1">1
-            <input id="bedrooms" type="radio" name="radio1" value=1>
-            <span class="checkmark1"></span>
-            </label>
-            <label class="container1">2
-            <input id="bedrooms" type="radio" name="radio1" value=2>
-            <span class="checkmark1"></span>
-            </label>
-            <label class="container1">3
-            <input id="bedrooms" type="radio" name="radio1" value=3>
-            <span class="checkmark1"></span>
-            </label>
-            <label class="container1">4
-            <input id="bedrooms" type="radio" name="radio1" value=4>
-            <span class="checkmark1"></span>
-            </label>
-            <label class="container1">4+
-            <input id="bedrooms" type="radio" name="radio1" value=5>
-            <span class="checkmark1"></span>
-            </label>
-            </div><br>
-
-            <div class="Bathrooms">
-            <label style="color:grey;font-weight:normal;">Bathrooms</label><br>
-            <label class="container3">1
-            <input id="bathrooms" type="radio" name="radio3" value=1>
-            <span class="checkmark3"></span>
-            </label>
-            <label class="container3">2
-            <input id="bathrooms"  type="radio" name="radio3" value=2>
-            <span class="checkmark3"></span>
-            </label>
-            <label class="container3">3
-            <input id="bathrooms" type="radio" name="radio3" value=3>
-            <span class="checkmark3"></span>
-            </label>
-            <label class="container3">4
-            <input id="bathrooms" type="radio" name="radio3" value=4>
-            <span class="checkmark3"></span>
-            </label>
-            <label class="container3">4+
-            <input id="bathrooms" type="radio" name="radio3" value=5>
-            <span class="checkmark3"></span>
-            </label>
-            </div><br>
-
-               <div class="Furnishing">
-               <label style="color:grey;font-weight:normal;">Furnishing</label><br>
-               <label class="container4">Furnished
-               <input id="furnishing" type="radio" name="radio4" value="Furnished">
-               <span class="checkmark4"></span>
-               </label>
-               <label class="container4">Semi-Furnished
-               <input id="furnishing" type="radio" name="radio4" value="Semi-Furnished">
-               <span class="checkmark4"></span>
-               </label>
-               <label class="container4">Unfurnished
-               <input id="furnishing" type="radio" name="radio4" value="Unfurnished">
-               <span class="checkmark4"></span>
-               </label>
-             </div><br>
-
-
-
-                <div class="Construction">
-                <label style="color:grey;font-weight:normal;">Construction Status</label><br>
-                <label class="container5">New Launch
-                <input id="construction" type="radio" name="radio5" value="New Launch">
-                <span class="checkmark5"></span>
-                </label>
-                <label class="container5">Ready to move
-                <input id="construction" type="radio" name="radio5" value="Ready to move">
-                <span class="checkmark5"></span>
-                </label>
-                <label class="container5">Under Construction
-                <input id="construction" type="radio" name="radio5" value="Under Construction">
-                <span class="checkmark5"></span>
-                </label>
-                </div>
+              <form>
+                <div class="form-container">
+                <p class="headtitle">SELECTED CATEGORY</p>
+                <p class="terms">Properties : Sale:Houses and Apartment</p>
+                <hr>
+                <p class="includedet">INCLUDE SOME DETAILS</p>
+                <label for="adtitle">Ad title*</label>
+                <input type="text" id="adtitle" name="adtitle">
+                <p class="terms">Mention the key features of your item (e.g. brand, model, age, type)</p>
+                <label for="Description">Description *</label>
+                <textarea id="description" name="Description" ></textarea>
+                <p class="terms">Include condition, features and reason for selling</p>
+                <label for="price">SET A PRICE</label>
+                <p class="terms">Price*</p>
+                <input type="text" id="price" name="price" placeholder="₹">
+                <label for="image">UPLOAD UP TO 12 PHOTOS</label>
                 <br>
-
-                 <div class="by">
-                 <label style="color:grey;font-weight:normal;">Listed by</label><br>
-                 <label class="container6">Builder
-                 <input id="by" type="radio" name="radio6" value="Builder">
-                 <span class="checkmark6"></span>
-                 </label>
-                 <label class="container6">Dealer
-                 <input id="by" type="radio" name="radio6" value="Dealer">
-                 <span class="checkmark6"></span>
-                 </label>
-                 <label class="container6">Owner
-                 <input id="by" type="radio" name="radio6" value="Owner">
-                 <span class="checkmark6"></span>
-                 </label>
-                 </div>
-                 <br>
-
-        <label>Builtup area(sq.ft)*</label><br>
-
-        <input  type="number" min=50 id="arb" name="areab" required><br><br>
-
-        <label>Carpet area(sq.ft)*</label><br>
-        <input  type="number" min=50 id="arc" name="areac" required><br><br>
-
-        <label>Maintenance(Monthly)</label><br>
-        <input  type="number" min=0 id="maintenance" name="Maintenance" required><br><br>
-
-        <label>Total Floors</label><br>
-        <input  type="number" min=0 id="totalfloor" name="Floors" required><br><br>
-
-        <label>Floor No</label><br>
-        <input  type="numer" min=10 id="floorno" name="Floor-no" required><br><br>
-  
-
-        <label>Car Parking</label><br>
-        <div class="Parking">
-        <label class="container7">1
-        <input id="car" type="radio" name="radio7" value=1>
-        <span class="checkmark7"></span>
-        </label>
-        <label class="container7">2
-        <input id="car" type="radio" name="radio7" value=2>
-        <span class="checkmark7"></span>
-        </label>
-        <label class="container7">3
-        <input id="car" type="radio" name="radio7" value=3>
-        <span class="checkmark7"></span>
-        </label>
-        <label class="container7">4
-        <input id="car" type="radio" name="radio7" value=4>
-        <span class="checkmark7"></span>
-        </label>
-        <label class="container7">4+
-        <input id="car" type="radio" name="radio7" value=5>
-        <span class="checkmark7"></span>
-        </label>
-        </div><br>
-
-        <div class="direction">
-        <label>Facing:</label><br>
-              <select  id="facing" name="direction" required>
-                <option value="E">    </option>
-                  <option value="E">  E  </option>
-                  <option value="W">  W  </option>
-                  <option value="N">  N  </option>
-                  <option value="S">  S  </option>
-                  <option value="NW"> NW   </option>
-                  <option value="SE">  SE  </option>
-                  <option value="SW">  SW  </option>
-                  <option value="NE">  NE  </option>
-              </select><br><br>
-        </div>
-
-      
-        <label>Project name:</label><br>
-        <input  type="text" minlength="5" id="pname" name="Projectname" placeholder="Name..." required><br><br>
-
-
-
-        <label>Add Title:</label><br>
-        <input  type="text" minlength="5" id="title" name="titl" placeholder="Write something.." required><br><br>
-
-        
-        <label>Description:</label><br>
-        <input  type="text" minlength="50" id="des" name="Description" placeholder="Write something.." required><br><br><br>
-        
-        <label>Set Price:</label><br>
-        <input  type="number" min=1000 id="pri" name="price" placeholder="Price.." required><br><br><br>
-      
-
-        <label>Upload upto 10 Photos :</label><br>
-        <div id="imgset1">
+              <div id="imgset1">
                   <div id="upload_button">
                     <label>
                       <input type="file" class="images" name="img1" id="image1" accept="image/*" multiple="false" value="1" onchange="checkUpload(this.id,this.name)">
@@ -260,8 +79,8 @@
                       <div class="img"><span class="fa fa-camera fileuploadicons" id="img4" ></span></div>
                     </label>
                   </div>
-          </div>
-          <div id="imgset1">
+              </div>
+              <div id="imgset1">
                 <div id="upload_button">
                   <label>
                       <input type="file"  class="images" name="img5" id="image5"  accept="image/*" multiple="false" value="1" onchange="checkUpload(this.id,this.name)">
@@ -313,190 +132,264 @@
                   </label>
                 </div>
               </div>
-
-        <br><br>
-        </span>
-        
-
-        <label><br>LOCATION :</label><br>
-         <div id="List" class="tabcontent">
-          <h5 id="desc">State*</h4> 
-            <select id="state" name="state">
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Chhattisgarh">Chhattisgarh</option>
-                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                <option value="Daman and Diu">Daman and Diu</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Lakshadweep">Lakshadweep</option>
-                <option value="Puducherry">Puducherry</option>
-                <option value="Goa">Goa</option>
-                <option value="Gujarat">Gujarat</option>
-                <option value="Haryana">Haryana</option>
-                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                <option value="Jharkhand">Jharkhand</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Kerala">Kerala</option>
-                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                <option value="Maharashtra" selected>Maharashtra</option>
-                <option value="Manipur">Manipur</option>
-                <option value="Meghalaya">Meghalaya</option>
-                <option value="Mizoram">Mizoram</option>
-                <option value="Nagaland">Nagaland</option>
-                <option value="Odisha">Odisha</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Sikkim">Sikkim</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Telangana">Telangana</option>
-                <option value="Tripura">Tripura</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                <option value="Uttarakhand">Uttarakhand</option>
-                <option value="West Bengal">West Bengal</option>
-                </select>
-          </div><br>
-
-              <label>City*</label><br>
-              <input  type="text" maxlength="10" id="city" name="City" required><br><br>
-        
-              <label>Address*</label><br>
-              <input  type="text" minlength="8" id="address" name="address" required><br><br>
-            <br>
-
-
+                <hr>
+                <div id="confirmlocation">
+                  <h3 class="head">CONFIRM YOUR LOCATION</h3>
+                  <div class="tab">
+                      <label class="tablinks " onclick="openCity(event, 'List')" id="defaultOpen">LIST</label>
+                      <label class="tablinks" onclick="openCity(event, 'Location')">CURRENT LOCATION</label>
+                    </div>
+                    
+                    <div id="List" class="tabcontent">
+                      <h5 id="desc">State*</h5> 
+                          <select id="state" name="state">
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Delhi">Delhi</option>
+                            </select>
+                          <h5 id="desc">City*</h4> 
+                        <input type="text" id="city" name="city" placeholder="Enter City" >   
+                      <h5 id="desc">Landmark*</h4>    
+                        <input type="text" id="landmark" name="city" placeholder="Enter Landmark" >              
+                    </div>
+                    
+                    <div id="Location" class="tabcontent">
+                      <h3>Maharashtra</h3>
+                      <p>Patan,Satara</p> 
+                    </div> 
+                
+                    
+               </div> 
+              
+               <div id="reviewdetails">
+                  <h3 class="head">REVIEW YOUR DETAILS</h3>
+                  <h5 id="descs">Name</h4>
+                  <input type="text" id="namebox" onkeyup="validate()"> 
+                  <div class="note">
+                    <h4>Let's verify your account</h4>
+                  We will send you a confirmation code by sms on the next step.
+                  <br>
+                  </div>
+                  
+                  <h5 id="descs">Mobile Phone Number*</h5> 
+                      <span class="input-symbol-phn">
+                          <input type="text" id="namebox1" onkeyup="validate()"/>
+                      </span>
       
-        <label>About You :</label><br>
-      
-        <label>Name:</label><br>
-        <input  type="text" minlength="3" id="name" name="yName" required>
-      <br>
-      <label>Email id :</label><br>
-      <input  type="email" id="Email" name="email" required>
-      <br>
-    
-    <label>Phone Number :</label><br>
-    <input  type="number" maxlength=10 minlength=10 id="number" name="Number" required>
-  <br>
-  <br>
-          <input type="submit" value="Submit" id="submit" class="form-btn"/>
-         <span class="error" style="display:none">You didn't enter any information </span>
-         <span class="success" style="display:none"> data sent</span>
-         </div> 
-      </form>
-  </section>
+               </div>
+                <br>
+                
+                <button type="button" class="form-btn" data-toggle="modal" data-target="#exampleModalLong" onclick="preview()">Preview</button>
+               <span class="error" style="display:none">You didn't enter any information </span>
+               <span class="success" style="display:none"> data sent</span>
+              </div>
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                      
+                      <div class="cont">
+                          <label for="adtitle">Ad title*</label>
+                          <input type="text" id="adt" disabled="true" ><br><br>
+
+                          <label for="Description">Description *</label>
+                          <textarea id="des" disabled="true"></textarea><br><br>
+
+                          <label for="price">SET A PRICE</label>
+                          <input type="text" id="pri" disabled="true" placeholder="₹">
+
+                          <label>STATE:</label><br>
+                          <input type="text" id="sta" disabled="true">
+                          
+                          <label>CITY:</label>
+                          <input type="text" disabled="true" id="ci">
+
+                          <label>LANDMARK:</label>
+                          <input type="text" disabled="true" id="land">
+
+                          <label>Name</label>
+                          <input type="text" id="nameb" disabled="true"> 
+
+                          <label>Mobile No</label><br>
+                          <input type="text" id="nam" disabled="true" />
+                      </div>
+
+                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+                      <input type="submit" value="Submit" id="submit" class="btn btn-primary" onclick="upload()" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </section>
 
           </section>
         </section>
       </div>
+      <script src="adpost.js"></script>
+      <script>
+        function preview() {
+        var sel=document.getElementById("state");
+            //console.log(sel);
+        var opt=sel.options[sel.selectedIndex];
+        var stat=opt.value;
+        var te=document.getElementById('description').value;
+        console.log(te);
+        document.getElementById('adt').value=document.getElementById('adtitle').value;
+        document.getElementById('des').value=te;
+        document.getElementById('pri').value=document.getElementById('price').value;
+        document.getElementById('sta').value=stat;
+        document.getElementById('ci').value=document.getElementById('city').value;
+        document.getElementById('land').value=document.getElementById('landmark').value;
+        document.getElementById('nameb').value=document.getElementById('namebox').value;
+        document.getElementById('nam').value=document.getElementById('namebox1').value;
+        
+      }
+        // $('.upload-block input').change(function() {
+        //   $('#upload-btn').prop(
+        //       'disabled',
+        //       !($('.upload-block :checked').length && $('#InputFile').val()));
+        // });
+        function checkUpload(id,name)
+        {
+          console.log("id = "+id+"name = "+name)
+          if (document.getElementById(id).files.length != 0){
+            document.getElementById(name).className = "fa fa-check fa-3x fileuploadicons";
+            document.getElementById(name).style.color="blue"; 
+          }
+          else
+          {
+            document.getElementById(name).className = "fa fa-camera fa-2x";
+            document.getElementById(name).style.color="black"; 
 
-    <script>
-
-      $("#submit").click(function() {
-
-
-    var propertytype = $("#type").val();
-    var bedrooms = $("#bedrooms").val();
-    var bathrooms = $("#bathrooms").val();
-    var furnishing = $("#furnishing").val();
-    var construction = $("#construction").val();
-    var postby = $("#by").val();
-    var cars = $("#car").val();
-    var buitarea = $("#arb").val();
-    var carpetarea = $("#arc").val();
-    var totalfloor = $("#totalfloor").val();
-    var floorno = $("#floorno").val();
-    var maintenance = $("#maintenance").val();
-    var facing = $("#facing").val();
-    var projectname = $("#pname").val();
-    var title = $("#title").val();
-    var price = $("#pri").val();
-    var description = $("#des").val();
-    var state = $("#state").val();
-    var city = $("#city").val();
-    var address = $("#address").val();
-    var username = $("#name").val();
-    var email = $("#email").val();
-    var phonenumber = $("#number").val();
-    var image1 = $("#image1").val();
-    var image2 = $("#image2").val();
-    var image3 = $("#image3").val();
-    var image4 = $("#image4").val();
-    var image5 = $("#image5").val();
-    var image6 = $("#image6").val();
-    var image7 = $("#image7").val();
-    var image8 = $("#image8").val();
-    var image9 = $("#image9").val();
-    var image10 = $("#image10").val();
-    var image11 = $("#image11").val();
-    var image12 = $("#image12").val();
-
-        data = {
-          "propertytype": propertytype,
-          "bedrooms": bedrooms,
-          "bathrooms": bathrooms,
-          "furnishing":furnishing,
-          "construction": construction,
-         "postby": postby,
-         "cars": cars,
-         "buitarea": builtarea,
-         "carpetarea": carpetarea,
-        "totalfloor": totalfloor,
-          "floorno": floorno,
-         "maintenance": maintenance,
-         "facing": facing,
-          "projectname": projectname,
-         "title": title,
-         "price": price,
-         "description": description,
-          "state": state,
-           "city": city,
-           "address": address,
-           "username": username,
-           "email": email,
-           "phonenumber": phonenumber,
-            "Adtitle":adtitle,
-            "Description":description,
-            "Price":price,
-            "Image1":image1,
-            "Image2":image2,
-            "Image3":image3,
-            "Image4":image4,
-            "Image5":image5,
-            "Image6":image6,
-            "Image7":image7,
-            "Image8":image8,
-            "Image9":image9,
-            "Image10":image10,
-            "Image11":image11,
-            "Image12":image12
-            }
-            console.log(data);
-    if(title =='' || description =='' || price =='' || propertytype =='' || bedrooms =='' || bathrooms ==''|| furnishing==''||construction==''||postby==''||cars==''||buitarea==''||carpetarea==''||totalfloor==''||floorno==''||maintenance==''||facing==''||projectname=='' || state==''||city==''||address=='')
-    {
-    $('.success').fadeOut(200).hide();
-    $('.error').fadeOut(200).show();
-    }
-    else
-    {
-    $.ajax({
-    type: "POST",
-    url: "demo.txt",
-    data: data,
-    success: function(){
-    $('.success').fadeIn(200).show();
-    $('.error').fadeOut(200).hide();
-    }
-    });
-    }
-    return false;
-    });
+          }
+        }
+        // function upload() {
+        //   if (document.getElementById("image1").files.length != 0){
+        //     document.getElementById("img1").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image2").files.length != 0){
+        //     document.getElementById("img2").className = "fa fa-check";
+        //   }
+          
+        //   if (document.getElementById("image3").files.length != 0){
+        //     document.getElementById("img3").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image4").files.length != 0){
+        //     document.getElementById("img4").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image5").files.length != 0){
+        //     document.getElementById("img5").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image6").files.length != 0){
+        //     document.getElementById("img6").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image7").files.length != 0){
+        //     document.getElementById("img7").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image8").files.length != 0){
+        //     document.getElementById("img8").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image9").files.length != 0){
+        //     document.getElementById("img9").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image10").files.length != 0){
+        //     document.getElementById("img10").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image11").files.length != 0){
+        //     document.getElementById("img11").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image12").files.length != 0){
+        //     document.getElementById("img12").className = "fa fa-check";
+        //   }
+        //   else{
+        //     document.getElementById("img1").className = "fa fa-camera";
+        //     document.getElementById("img2").className = "fa fa-camera";
+        //     document.getElementById("img3").className = "fa fa-camera";
+        //     document.getElementById("img4").className = "fa fa-camera";
+        //     document.getElementById("img5").className = "fa fa-camera";
+        //     document.getElementById("img6").className = "fa fa-camera";
+        //     document.getElementById("img7").className = "fa fa-camera";
+        //     document.getElementById("img8").className = "fa fa-camera";
+        //     document.getElementById("img9").className = "fa fa-camera";
+        //     document.getElementById("img10").className = "fa fa-camera";
+        //     document.getElementById("img11").className = "fa fa-camera";
+        //     document.getElementById("img12").className = "fa fa-camera";
+        //   }
+      //}
     </script>
+<script>
 
 
-  </body>
-  </html>
+$(document).ready(function(){
+  
+  document.getElementById("List").style.display = "block";
+})
+
+  $(".submit").click(function() {
+
+
+var adtitle = $("#adtitle").val();
+var des = $("#Description").val();
+var price = $("#price").val();
+var image1 = $("#image1").val();
+var image2 = $("#image2").val();
+var image3 = $("#image3").val();
+var image4 = $("#image4").val();
+var image5 = $("#image5").val();
+var image6 = $("#image6").val();
+var image7 = $("#image7").val();
+var image8 = $("#image8").val();
+var image9 = $("#image9").val();
+var image10 = $("#image10").val();
+var image11 = $("#image11").val();
+var image12 = $("#image12").val();
+
+    data = {
+        "Adtitle":adtitle,
+        "Description":des,
+        "Price":price,
+        "Image1":image1,
+        "Image2":image2,
+        "Image3":image3,
+        "Image4":image4,
+        "Image5":image5,
+        "Image6":image6,
+        "Image7":image7,
+        "Image8":image8,
+        "Image9":image9,
+        "Image10":image10,
+        "Image11":image11,
+        "Image12":image12
+        }
+        console.log(data);
+if(adtitle =='' || des =='' || price =='')
+{
+$('.success').fadeOut(200).hide();
+$('.error').fadeOut(200).show();
+}
+else
+{
+$.ajax({
+type: "GET",
+url: "demo.txt",
+data: data,
+success: function(){
+$('.success').fadeIn(200).show();
+$('.error').fadeOut(200).hide();
+}
+});
+}
+return false;
+});
+</script>     
+</body>
+</html>

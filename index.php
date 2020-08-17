@@ -294,7 +294,7 @@
                     
                     <div class="hero__search__phone">
                        <div class="hero__search__phone__icon">
-                        <a href="/routes.php?sell"><div type="submit" id="sell" >SELL</div></a>
+                        <a href="./routes.php?sell"><div type="submit" id="sell" >SELL</div></a>
                        </div>  
                         <div class="hero__search__phone__icon">
                                 <a href="#"><i class="fa fa-heart" style="color:#000033"></i> <span>1</span></a>     
@@ -302,7 +302,7 @@
                         <div class="hero__search__phone__icon">
                             <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
                         </div>  
-                        <div class="hero__search__phone__icon">
+                        <div class="hero__search__phone__icon" style="cursor:pointer;">
                             <a id="profile"><i class="fa fa-user"></i></a> 
                         </div> 
                         
@@ -321,7 +321,7 @@
                             </div>
                             
                             <div class="detailslist">
-                                <a href="/routes.php?myads" class="myadsdetails">
+                                <a href="./routes.php?myads" class="myadsdetails">
                                     <div style="padding: 2px 16px 0 0;">
                                         <svg width="23px" height="23px" viewBox="0 0 1024 1024" >
                                             <path d="M349.46 85.333h487.619l40.635 40.635v609.524l-40.635 40.635h-487.619l-40.635-40.635v-609.524l40.635-40.635zM390.095 694.857h406.35v-528.254h-406.35v528.254zM146.286 247.873l40.635-40.635 40.635 40.635v609.524h528.254l40.635 40.635-40.635 40.635h-568.889l-40.635-40.635v-650.159zM512 329.143h162.54l40.635 40.635-40.635 40.635h-162.54l-40.635-40.635 40.635-40.635zM512 491.683h81.27l40.635 40.635-40.635 40.635h-81.27l-40.635-40.635 40.635-40.635z">

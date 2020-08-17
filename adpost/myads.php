@@ -1,13 +1,18 @@
-
-
-
 <html>
     <head>
         <meta name="viewport" content="width-device-width,initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://localhost/openups/public/css/myads.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="./public/css/myads.css">
+        <link rel="stylesheet" href="./public/css/forms/forms.css">
+
     </head>
     <body>
+    <nav class="navbar navbar-expand-sm  fixed-top">
+        <a href="./"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
+        <a class="navbar-brand" href="./"><b style="font-size: 25px;font-family: Jokerman;color:#000033;">OpenUps</b></a>
+    </nav>
         <br><br>
         <div class="main">
             

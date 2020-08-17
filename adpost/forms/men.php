@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>OpenUps | Men</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/forms/forms.css">
+    <link rel="stylesheet" href="./public/css/forms/forms.css">
     <script src="forms.js"></script>
+
    <style>
-    
+    .modal-body{
+    height: 800px;
+    border:500px;
+  }
+  .cont{
+    padding:5px;
+    margin: 25px;
+  }
    </style>
 </head>
 <body>
      
 <nav class="navbar navbar-expand-sm  fixed-top">
-  <a href="#"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
-  <a class="navbar-brand" href="#" style="font-size: 20px;">Logo</a>
+  <a href="./routes.php?sell"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
+  <a class="navbar-brand" href="./"><b style="font-size: 25px;font-family: Jokerman;color:#000033;">OpenUps</b></a>
 </nav>
     <div class="container-fliud">
         <div style="text-align:center;">
@@ -32,7 +40,7 @@
               <form>
                 <div class="form-container">
                 <p class="headtitle">SELECTED CATEGORY</p>
-                <p class="terms">Fashion/Clothes</p>
+                <p class="terms">Fashion : Men</p>
                 <hr>
                 <p class="includedet">INCLUDE SOME DETAILS</p>
                 <label for="adtitle">Ad title*</label>
@@ -133,18 +141,19 @@
                     </div>
                     
                     <div id="List" class="tabcontent">
-                      <h5 id="desc">State*</h4> 
+                      <h5 id="desc">State*</h5> 
                           <select id="state" name="state">
                               <option value="Maharashtra">Maharashtra</option>
                               <option value="Gujarat">Gujarat</option>
                               <option value="Goa">Goa</option>
                               <option value="Delhi">Delhi</option>
                             </select>
-                      <h5 id="desc">City*</h4> 
+                          <h5 id="desc">City*</h4> 
                         <input type="text" id="city" name="city" placeholder="Enter City" >   
                       <h5 id="desc">Landmark*</h4>    
                         <input type="text" id="landmark" name="city" placeholder="Enter Landmark" >              
                     </div>
+                    
                     <div id="Location" class="tabcontent">
                       <h3>Maharashtra</h3>
                       <p>Patan,Satara</p> 
@@ -165,14 +174,59 @@
                   
                   <h5 id="descs">Mobile Phone Number*</h5> 
                       <span class="input-symbol-phn">
-                          <input type="text" id="namebox" onkeyup="validate()"/>
+                          <input type="text" id="namebox1" onkeyup="validate()"/>
                       </span>
       
                </div>
                 <br>
-                <input type="submit" value="Post Now" class="form-btn" onclick="upload()">
+                
+                <button type="button" class="form-btn" data-toggle="modal" data-target="#exampleModalLong" onclick="preview()">Preview</button>
                <span class="error" style="display:none">You didn't enter any information </span>
                <span class="success" style="display:none"> data sent</span>
+              </div>
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                      
+                      <div class="cont">
+                          <label for="adtitle">Ad title*</label>
+                          <input type="text" id="adt" disabled="true" ><br><br>
+
+                          <label for="Description">Description *</label>
+                          <textarea id="des" disabled="true"></textarea><br><br>
+
+                          <label for="price">SET A PRICE</label>
+                          <input type="text" id="pri" disabled="true" placeholder="₹">
+
+                          <label>STATE:</label><br>
+                          <input type="text" id="sta" disabled="true">
+                          
+                          <label>CITY:</label>
+                          <input type="text" disabled="true" id="ci">
+
+                          <label>LANDMARK:</label>
+                          <input type="text" disabled="true" id="land">
+
+                          <label>Name</label>
+                          <input type="text" id="nameb" disabled="true"> 
+
+                          <label>Mobile No</label><br>
+                          <input type="text" id="nam" disabled="true" />
+                      </div>
+
+                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+                      <input type="submit" value="Submit" id="submit" class="btn btn-primary" onclick="upload()" />
+                    </div>
+                  </div>
+                </div>
               </div>
               </form>
             </section>
@@ -180,128 +234,162 @@
           </section>
         </section>
       </div>
-      <script src="script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript">
-
-    $(".submit").click(function() {
-
-
-    var adtitle = $("#adtitle").val();
-    var description = $("#Description").val();
-    var price= $("#price-input").val();
-    var state = $("#state").val();
-    var city = $("#city").val();
-    var landmark = $("#landmark").val();
-    var name = $("#name").val();
-    var contact = $("#contact").val();
-    var img1 = $("#real-file1").val();
-    var img2 = $("#real-file2").val();
-    var img3 = $("#real-file3").val();
-    var img4 = $("#real-file4").val();
-    data = {
-            "adtitle":adtitle,
-            "description":description,
-            "price":price,
-            "state":state,
-            "city":city,
-            "landmark":landmark,
-            "name":name,
-            "contact":contact
-            }
-            console.log(data);
-    if(adtitle=='' || description=='' || price=='' || state=='' || city=='' || landmark=='' || name=='' || contact=='')
-    {
-    $('.success').fadeOut(200).hide();
-    $('.error').fadeOut(200).show();
-    }
-    else
-    {
-    $.ajax({
-    type: "POST",
-    url: "demo.txt",
-    data: data,
-    success: function(){
-    $('.success').fadeIn(200).show();
-    $('.error').fadeOut(200).hide();
-    }
-    });
-    }
-    return false;
-    });
-
-
-    const filepath1 = document.getElementById('real-file1');
-    const btn1 = document.getElementById('custbtn1');
-    const text1 = document.getElementById('text1');
-
-    btn1.addEventListener("click", function(){
-      filepath1.click();
-    });
-
-    filepath1.addEventListener("change", function(){
-      if(filepath1.value){
-        text1.innerHTML = "Uploaded";
+      <script src="adpost.js"></script>
+      <script>
+        function preview() {
+        var sel=document.getElementById("state");
+            //console.log(sel);
+        var opt=sel.options[sel.selectedIndex];
+        var stat=opt.value;
+        var te=document.getElementById('description').value;
+        console.log(te);
+        document.getElementById('adt').value=document.getElementById('adtitle').value;
+        document.getElementById('des').value=te;
+        document.getElementById('pri').value=document.getElementById('price').value;
+        document.getElementById('sta').value=stat;
+        document.getElementById('ci').value=document.getElementById('city').value;
+        document.getElementById('land').value=document.getElementById('landmark').value;
+        document.getElementById('nameb').value=document.getElementById('namebox').value;
+        document.getElementById('nam').value=document.getElementById('namebox1').value;
+        
       }
-      else{
-        text1.innerHTML = "No File uploaded";
-      }
-    })
+        // $('.upload-block input').change(function() {
+        //   $('#upload-btn').prop(
+        //       'disabled',
+        //       !($('.upload-block :checked').length && $('#InputFile').val()));
+        // });
+        function checkUpload(id,name)
+        {
+          console.log("id = "+id+"name = "+name)
+          if (document.getElementById(id).files.length != 0){
+            document.getElementById(name).className = "fa fa-check fa-3x fileuploadicons";
+            document.getElementById(name).style.color="blue"; 
+          }
+          else
+          {
+            document.getElementById(name).className = "fa fa-camera fa-2x";
+            document.getElementById(name).style.color="black"; 
+
+          }
+        }
+        // function upload() {
+        //   if (document.getElementById("image1").files.length != 0){
+        //     document.getElementById("img1").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image2").files.length != 0){
+        //     document.getElementById("img2").className = "fa fa-check";
+        //   }
+          
+        //   if (document.getElementById("image3").files.length != 0){
+        //     document.getElementById("img3").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image4").files.length != 0){
+        //     document.getElementById("img4").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image5").files.length != 0){
+        //     document.getElementById("img5").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image6").files.length != 0){
+        //     document.getElementById("img6").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image7").files.length != 0){
+        //     document.getElementById("img7").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image8").files.length != 0){
+        //     document.getElementById("img8").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image9").files.length != 0){
+        //     document.getElementById("img9").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image10").files.length != 0){
+        //     document.getElementById("img10").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image11").files.length != 0){
+        //     document.getElementById("img11").className = "fa fa-check";
+        //   }
+        //   if (document.getElementById("image12").files.length != 0){
+        //     document.getElementById("img12").className = "fa fa-check";
+        //   }
+        //   else{
+        //     document.getElementById("img1").className = "fa fa-camera";
+        //     document.getElementById("img2").className = "fa fa-camera";
+        //     document.getElementById("img3").className = "fa fa-camera";
+        //     document.getElementById("img4").className = "fa fa-camera";
+        //     document.getElementById("img5").className = "fa fa-camera";
+        //     document.getElementById("img6").className = "fa fa-camera";
+        //     document.getElementById("img7").className = "fa fa-camera";
+        //     document.getElementById("img8").className = "fa fa-camera";
+        //     document.getElementById("img9").className = "fa fa-camera";
+        //     document.getElementById("img10").className = "fa fa-camera";
+        //     document.getElementById("img11").className = "fa fa-camera";
+        //     document.getElementById("img12").className = "fa fa-camera";
+        //   }
+      //}
+    </script>
+<script>
 
 
-    const filepath2 = document.getElementById('real-file2');
-    const btn2 = document.getElementById('custbtn2');
-    const text2 = document.getElementById('text2');
-
-    btn2.addEventListener("click", function(){
-      filepath2.click();
-    });
-
-    filepath2.addEventListener("change", function(){
-      if(filepath2.value){
-        text2.innerHTML = "Uploaded";
-      }
-      else{
-        text2.innerHTML = "No File uploaded";
-      }
-    });
-
-    const filepath3 = document.getElementById('real-file3');
-    const btn3 = document.getElementById('custbtn3');
-    const text3 = document.getElementById('text3');
-
-    btn3.addEventListener("click", function(){
-      filepath3.click();
-    });
-
-    filepath3.addEventListener("change", function(){
-      if(filepath3.value){
-        text3.innerHTML = "Uploaded";
-      }
-      else{
-        text3.innerHTML = "No File uploaded";
-      }
-    });
-
-    const filepath4 = document.getElementById('real-file4');
-    const btn4 = document.getElementById('custbtn4');
-    const text4 = document.getElementById('text4');
-
-    btn4.addEventListener("click", function(){
-      filepath4.click();
-    });
-
-    filepath4.addEventListener("change", function(){
-      if(filepath4.value){
-        text4.innerHTML = "Uploaded";
-      }
-      else{
-        text4.innerHTML = "No File uploaded";
-      }
-    });
-
-
-  </script>
+$(document).ready(function(){
   
+  document.getElementById("List").style.display = "block";
+})
+
+  $(".submit").click(function() {
+
+
+var adtitle = $("#adtitle").val();
+var des = $("#Description").val();
+var price = $("#price").val();
+var image1 = $("#image1").val();
+var image2 = $("#image2").val();
+var image3 = $("#image3").val();
+var image4 = $("#image4").val();
+var image5 = $("#image5").val();
+var image6 = $("#image6").val();
+var image7 = $("#image7").val();
+var image8 = $("#image8").val();
+var image9 = $("#image9").val();
+var image10 = $("#image10").val();
+var image11 = $("#image11").val();
+var image12 = $("#image12").val();
+
+    data = {
+        "Adtitle":adtitle,
+        "Description":des,
+        "Price":price,
+        "Image1":image1,
+        "Image2":image2,
+        "Image3":image3,
+        "Image4":image4,
+        "Image5":image5,
+        "Image6":image6,
+        "Image7":image7,
+        "Image8":image8,
+        "Image9":image9,
+        "Image10":image10,
+        "Image11":image11,
+        "Image12":image12
+        }
+        console.log(data);
+if(adtitle =='' || des =='' || price =='')
+{
+$('.success').fadeOut(200).hide();
+$('.error').fadeOut(200).show();
+}
+else
+{
+$.ajax({
+type: "GET",
+url: "demo.txt",
+data: data,
+success: function(){
+$('.success').fadeIn(200).show();
+$('.error').fadeOut(200).hide();
+}
+});
+}
+return false;
+});
+</script>     
 </body>
 </html>

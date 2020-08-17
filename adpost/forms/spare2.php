@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenUps | Cameras & Lenses</title>
+    <title>OpenUps | Spare Parts</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./public/css/forms/forms.css">
+    <script src="forms.js"></script>
 
    <style>
     .modal-body{
@@ -39,7 +40,7 @@
               <form>
                 <div class="form-container">
                 <p class="headtitle">SELECTED CATEGORY</p>
-                <p class="terms">Electronics : Cameras & Lenses</p>
+                <p class="terms">Vehicles (Two Wheelers) : Spare Parts</p>
                 <hr>
                 <p class="includedet">INCLUDE SOME DETAILS</p>
                 <label for="adtitle">Ad title*</label>
@@ -234,8 +235,6 @@
         </section>
       </div>
       <script src="adpost.js"></script>
-    <script src="./public/js/forms.js"></script>
-
       <script>
         function preview() {
         var sel=document.getElementById("state");

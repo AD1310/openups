@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>OpenUps | Spare Parts</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/forms/forms.css">
+    <link rel="stylesheet" href="./public/css/forms/forms.css">
     <script src="forms.js"></script>
 
    <style>
-    
+    .modal-body{
+    height: 800px;
+    border:500px;
+  }
+  .cont{
+    padding:5px;
+    margin: 25px;
+  }
    </style>
 </head>
 <body>
      
 <nav class="navbar navbar-expand-sm  fixed-top">
-  <a href="#"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
-  <a class="navbar-brand" href="#" style="font-size: 20px;">Logo</a>
+  <a href="./routes.php?sell"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
+  <a class="navbar-brand" href="./"><b style="font-size: 25px;font-family: Jokerman;color:#000033;">OpenUps</b></a>
 </nav>
     <div class="container-fliud">
         <div style="text-align:center;">
@@ -33,7 +40,7 @@
               <form>
                 <div class="form-container">
                 <p class="headtitle">SELECTED CATEGORY</p>
-                <p class="terms">Pets / Fishes & Aquarium</p>
+                <p class="terms">Vehicles (Four Wheelers and More) : Spare Parts</p>
                 <hr>
                 <p class="includedet">INCLUDE SOME DETAILS</p>
                 <label for="adtitle">Ad title*</label>
@@ -134,13 +141,17 @@
                     </div>
                     
                     <div id="List" class="tabcontent">
-                      <h5 id="desc">State*</h4> 
+                      <h5 id="desc">State*</h5> 
                           <select id="state" name="state">
                               <option value="Maharashtra">Maharashtra</option>
                               <option value="Gujarat">Gujarat</option>
                               <option value="Goa">Goa</option>
                               <option value="Delhi">Delhi</option>
                             </select>
+                          <h5 id="desc">City*</h4> 
+                        <input type="text" id="city" name="city" placeholder="Enter City" >   
+                      <h5 id="desc">Landmark*</h4>    
+                        <input type="text" id="landmark" name="city" placeholder="Enter Landmark" >              
                     </div>
                     
                     <div id="Location" class="tabcontent">
@@ -163,14 +174,59 @@
                   
                   <h5 id="descs">Mobile Phone Number*</h5> 
                       <span class="input-symbol-phn">
-                          <input type="text" id="namebox" onkeyup="validate()"/>
+                          <input type="text" id="namebox1" onkeyup="validate()"/>
                       </span>
       
                </div>
                 <br>
-                <input type="submit" value="Post Now" class="form-btn" onclick="upload()">
+                
+                <button type="button" class="form-btn" data-toggle="modal" data-target="#exampleModalLong" onclick="preview()">Preview</button>
                <span class="error" style="display:none">You didn't enter any information </span>
                <span class="success" style="display:none"> data sent</span>
+              </div>
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                      
+                      <div class="cont">
+                          <label for="adtitle">Ad title*</label>
+                          <input type="text" id="adt" disabled="true" ><br><br>
+
+                          <label for="Description">Description *</label>
+                          <textarea id="des" disabled="true"></textarea><br><br>
+
+                          <label for="price">SET A PRICE</label>
+                          <input type="text" id="pri" disabled="true" placeholder="₹">
+
+                          <label>STATE:</label><br>
+                          <input type="text" id="sta" disabled="true">
+                          
+                          <label>CITY:</label>
+                          <input type="text" disabled="true" id="ci">
+
+                          <label>LANDMARK:</label>
+                          <input type="text" disabled="true" id="land">
+
+                          <label>Name</label>
+                          <input type="text" id="nameb" disabled="true"> 
+
+                          <label>Mobile No</label><br>
+                          <input type="text" id="nam" disabled="true" />
+                      </div>
+
+                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+                      <input type="submit" value="Submit" id="submit" class="btn btn-primary" onclick="upload()" />
+                    </div>
+                  </div>
+                </div>
               </div>
               </form>
             </section>
@@ -180,6 +236,23 @@
       </div>
       <script src="adpost.js"></script>
       <script>
+        function preview() {
+        var sel=document.getElementById("state");
+            //console.log(sel);
+        var opt=sel.options[sel.selectedIndex];
+        var stat=opt.value;
+        var te=document.getElementById('description').value;
+        console.log(te);
+        document.getElementById('adt').value=document.getElementById('adtitle').value;
+        document.getElementById('des').value=te;
+        document.getElementById('pri').value=document.getElementById('price').value;
+        document.getElementById('sta').value=stat;
+        document.getElementById('ci').value=document.getElementById('city').value;
+        document.getElementById('land').value=document.getElementById('landmark').value;
+        document.getElementById('nameb').value=document.getElementById('namebox').value;
+        document.getElementById('nam').value=document.getElementById('namebox1').value;
+        
+      }
         // $('.upload-block input').change(function() {
         //   $('#upload-btn').prop(
         //       'disabled',
@@ -257,7 +330,7 @@
 
 
 $(document).ready(function(){
-  console.log("Hellow Eowdk")
+  
   document.getElementById("List").style.display = "block";
 })
 
