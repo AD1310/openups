@@ -302,8 +302,8 @@
                         <div class="hero__search__phone__icon">
                             <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
                         </div>  
-                        <div class="hero__search__phone__icon" style="cursor:pointer;">
-                            <a id="profile"><i class="fa fa-user"></i></a> 
+                        <div class="hero__search__phone__icon" id="profile" style="cursor:pointer;">
+                            <i class="fa fa-user"></i>
                         </div> 
                         
                         <div class="details" style="display:none;">
@@ -392,6 +392,9 @@
                       </div>
                       <div class="carousel-item"  style="height:50%;">
                         <img class="d-block w-100" src="storage/images/banner5.jpg" alt="Second slide">
+                      </div>
+                      <div class="carousel-item"  style="height:50%;">
+                        <img class="d-block w-100" src="storage/images/banner8.jpg" alt="Third slide">
                       </div>
                    
                     </div>
