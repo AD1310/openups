@@ -3,7 +3,6 @@
         <meta name="viewport" content="width-device-width,initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <link rel="stylesheet" href="./public/css/myads.css">
         <link rel="stylesheet" href="./public/css/forms/forms.css">
 
@@ -13,7 +12,7 @@
         <a href="./"><span class="fa fa-arrow-left navbar-brand"style="font-size:20px"></span></a>
         <a class="navbar-brand" href="./"><b style="font-size: 25px;font-family: Jokerman;color:#000033;">OpenUps</b></a>
     </nav>
-        <br><br>
+        <br><br><br><br>
         <div class="main">
             
             <div id="titlebar">
@@ -33,15 +32,16 @@
                 
 
             </div>
-            <br><br><br>
+            <br>
             <div class="discount" >
                 <div class="package">
                     <span>Heavy discount on Business Packages</span>
                 </div>
                 <div class="viewpackage">
-                    <button type="button" data-aut-id="" class="packagebutton">
-                        <span>VIEW PACKAGES</span>
+                <a href="./routes.php?pkgoptions"><button type="button" data-aut-id="" class="packagebutton">
+                        <span>VIEW PACKAGES</span> 
                     </button>
+                    </a>
                 </div>
             </div>
             <div id="block1">

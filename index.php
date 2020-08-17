@@ -330,7 +330,7 @@
                                     </div>
                                     <span>My Ads</span>
                                 </a>
-                                <a class="myadsdetails" href="/business">
+                                <a class="myadsdetails" href="./routes.php?pkgoptions">
                                     <div style="padding: 2px 16px 0 0;">
                                         <svg width="23px" height="23px" viewBox="0 0 1024 1024">
                                             <path d="M426.667 42.667h170.667l42.667 42.667-42.667 42.667h256l42.667 42.667v768l-42.667 42.667h-682.667l-42.667-42.667v-768l42.667-42.667h256l-42.667-42.667 42.667-42.667zM213.333 896h597.333v-682.667h-597.333v682.667zM469.333 426.667v-85.333h256v85.333h-256zM298.667 426.667v-85.333h85.333v85.333h-85.333zM469.333 597.333v-85.333h256v85.333h-256zM298.667 597.333v-85.333h85.333v85.333h-85.333zM469.333 768v-85.333h256v85.333h-256zM298.667 768v-85.333h85.333v85.333h-85.333z">
@@ -339,7 +339,7 @@
                                     </div>
                                     <span>Buy Business Packages</span>
                                 </a>
-                                <a href="/mypkg" class="myadsdetails">
+                                <a href="./routes.php?mypackages" class="myadsdetails">
                                     <div style="padding: 2px 16px 0 0;">
                                         <svg width="23px" height="23px" viewBox="0 0 1024 1024">
                                             <path d="M899.285 256l39.381 39.083v476.501l-39.381 39.083h-774.571l-39.381-39.083v-476.501l39.381-39.083h774.571zM853.461 511.573h-681.6v213.632h681.6v-213.632zM693.205 618.411h76.459l34.901 32.213-34.901 32.213h-128.896l-34.901-32.213 34.901-32.213h52.437zM853.461 341.248h-681.387v86.357l681.387-2.347v-84.053z">

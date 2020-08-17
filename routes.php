@@ -85,4 +85,19 @@
         include('adpost/forms/women.php');
     }
 
+    if(isset($_GET["pkgoptions"]))
+    {
+        include('adpost/packagesoptions.php');
+    }
+
+    if(isset($_GET["packages"]))
+    {
+        include('adpost/packages.php');
+    }
+
+    if(isset($_GET["mypackages"]))
+    {
+        include('adpost/mypackages.php');
+    }
+
 ?>
