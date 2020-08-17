@@ -441,6 +441,7 @@
                     <div class="col-lg-12 col-sm-8">
                         <div class="row" >
                             <!-- {{-- Property 1 --}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-2">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg"  id="imgcard" class="img-responsive" alt="properties">
@@ -461,7 +462,9 @@
                                     </div>
                                 </div>  
                             </div>
+                            </a>
                             <!-- {{-- Property 2--}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder" ><img src="storage/images/mobile.jpg " id="imgcard" class="img-responsive" alt="properties">
@@ -482,7 +485,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                               <!-- {{-- Property 3--}} -->
+                            <a href="./routes.php?product">
                               <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
@@ -503,7 +508,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                               <!-- {{-- Property 4--}} -->
+                            <a href="./routes.php?product">
                               <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/bike.jpeg " id="imgcard" class="img-responsive" alt="properties">
@@ -524,7 +531,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                             <!-- {{-- Property 4--}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
@@ -545,7 +554,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                             <!-- {{-- Property 4--}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
@@ -566,7 +577,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                             <!-- {{-- Property 4--}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/about.jpg " id="imgcard" class="img-responsive" alt="properties">
@@ -587,7 +600,9 @@
                                     </div>
                                 </div>   
                             </div>
+                            </a>
                             <!-- {{-- Property 4--}} -->
+                            <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder" ><img src="storage/images/about.jpg" id="imgcard"  class="img-responsive" alt="properties">
@@ -608,7 +623,7 @@
                                     </div>
                                 </div>   
                             </div>
-                          
+                            </a>
                         </div>
                     </div>
                         

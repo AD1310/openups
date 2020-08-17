@@ -100,4 +100,9 @@
         include('adpost/mypackages.php');
     }
 
+    if(isset($_GET["product"]))
+    {
+        include('./productdetails.php');
+    }
+
 ?>
