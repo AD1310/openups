@@ -92,6 +92,107 @@
          width:100%;
      }
   }
+  .patch {
+    
+    text-decoration : none;
+    
+    position: absolute;
+    
+    margin-top: -16.5%;
+    
+    margin-left:-28.6%;
+    
+    z-index: 20;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+
+    
+    }
+    
+    
+    .patch .patch-background {
+    
+    position: absolute;
+    top:0;
+    right:0;
+    }
+    
+    .patch .thepatch {
+    
+    position: relative;
+    width: 100px;
+    padding: 6px 50px 6px 15px;
+    margin: 40px 50px 10px -71px;
+    color: #fff;
+    font-size:18px;
+    font-weight:bold;
+    background-color:gold;
+    text-shadow: 0px 1px 2px #bbb ;
+    
+    }
+    
+    .patch .thepatch:before,
+    .patch .thepatch:after {
+    content: '';
+    position: absolute;
+    width:0;
+    height:0;
+    }
+    
+    .patch .thepatch:after {
+    left: 0px;
+    top: 100%;
+    border-width : 5px 10px;
+    border-style: solid;
+    border-color: #e77548 #e77548 transparent transparent;
+    }
+    
+    .patch.sale {
+    top: 0;
+    
+    }
+    #imgcard
+    {
+        width: 100%;
+        height: 11vw;
+    }
+    @media only screen and (max-width: 600px) {
+        #imgcard {
+            width: 100%;
+            height: 30vw;
+        }
+        /* #cardDiv{
+            width:52%;
+            height:80vw;
+        } */
+        .properties-listing div.properties .price {
+            margin-left:-55%;
+            font-size:20px;
+        }
+        .properties-listing div.properties .title {
+                margin-left:-55%;
+            }
+            .properties-listing div.properties .address{
+                margin-left:-12%;
+                font-size:12px;
+            }
+            .patch{
+                margin-top: -44%;
+                margin-left: -89%; 
+            }
+            .patch .thepatch{
+                margin-left:24%;
+                margin-top:35%;
+               font-size:10px;
+               
+            }
+        #cardDiv {
+            width: 72%;
+            height: 70vw;
+            margin-left: -22%;
+            padding-left: 22%;
+            padding-bottom: 85%;
+        }
+    }
  </style>
 </head>
 
@@ -200,7 +301,9 @@
                         <div class="hero__search__phone__icon">
                             <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
                         </div>  
-                        
+                        <div class="hero__search__phone__icon">
+                            <a id="profile"><i class="fa fa-user"></i></a> 
+                        </div> 
                         
                         <div class="details" style="display:none;">
                             <div class="profiledetails">
@@ -267,9 +370,6 @@
                     
                         </div>
                       
-                        <div class="hero__search__phone__icon">
-                            <a href="#"><i class="fa fa-user"></i></a> 
-                        </div> 
                     
                     </div>
                    
@@ -310,6 +410,212 @@
 
 <!-- Hero Section End -->
 
+<section class="featured spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Bulk Products For Sale</h2>
+                </div>
+                <div class="featured__controls">
+                    <ul>
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter=".oranges">Electronics</li>
+                        <li data-filter=".fresh-meat">Fashion</li>
+                        <li data-filter=".vegetables">Properties</li>
+                        <li data-filter=".fastfood">Pets</li>
+                        <li data-filter=".vehicles">Vehicles</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="properties-listing spacer" >
+                
+                <div class="row" style="margin-left:1%;" >
+                    <div class="col-lg-12 col-sm-8">
+                        <div class="row" >
+                            <!-- {{-- Property 1 --}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-2">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg"  id="imgcard" class="img-responsive" alt="properties">
+                                        <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a> 
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>  
+                            </div>
+                            <!-- {{-- Property 2--}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder" ><img src="storage/images/mobile.jpg " id="imgcard" class="img-responsive" alt="properties">
+                                        <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a> 
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                              <!-- {{-- Property 3--}} -->
+                              <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
+                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a>  --}} -->
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                              <!-- {{-- Property 4--}} -->
+                              <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder"><img src="storage/images/bike.jpeg " id="imgcard" class="img-responsive" alt="properties">
+                                        <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a> 
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                            <!-- {{-- Property 4--}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
+                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a>  --}} -->
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                            <!-- {{-- Property 4--}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
+                                        <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a> 
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                            <!-- {{-- Property 4--}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder"><img src="storage/images/about.jpg " id="imgcard" class="img-responsive" alt="properties">
+                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a>  --}} -->
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                            <!-- {{-- Property 4--}} -->
+                            <div id="cardDiv" class="col-lg-3 col-sm-4">
+                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
+                                    <div class="image-holder" ><img src="storage/images/about.jpg" id="imgcard"  class="img-responsive" alt="properties">
+                                        <a class='patch sale' href='#' style='color:black;'>
+                                            <div class='thepatch'>Featured</div>
+                                            <div class='patch-background'> </div>
+                                        </a> 
+                                        <ul class="featured__item__pic__hover favorites">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </i></a></li>
+                                        </ul> 
+                                        <p class="price" >₹8,520</p> 
+                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
+                                    
+                                            <p class="address">Chandannagar, Pune</p>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                          
+                        </div>
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
 
 <script src="public/js/jquery-3.3.1.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
@@ -333,6 +639,7 @@ $('.togglecat').children().click(function(){
 });
 
         $(document).mouseup(function(e){
+            console.log("Hello World")
             var container = $(".details");
             $('#profile').click(function() {
                 $('.details').toggle();
