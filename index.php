@@ -491,10 +491,7 @@
                               <div id="cardDiv" class="col-lg-3 col-sm-4">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
-                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a>  --}} -->
+                                        
                                         <ul class="featured__item__pic__hover favorites">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                             <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
@@ -723,6 +720,17 @@ $('.togglecat').children().click(function(){
             
         });
 
+        $(document).ready(function(){
+            $.ajax({
+                url:'./api/listads.php',
+                type:'POST',
+                success:function(para)
+                {
+                    para = JSON.parse(para)
+                    alert(para)
+                }
+            })
+        })
 
 
 </script>
