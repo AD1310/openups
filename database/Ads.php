@@ -2,7 +2,7 @@
 class Ads{
         // database connection and table name
         private $conn;
-        private $table_name = "posts";
+        private $table_name = "ads";
 
         // post properties
  
@@ -19,7 +19,7 @@ class Ads{
         public $uid;
         public $scid;
         public $images;
-
+        public $area;
         public function __construct($db){
             $this->conn = $db;
             
@@ -28,8 +28,8 @@ class Ads{
         {
         
             //write query
-            $query = 'insert into posts(title,brand,price,descrip,tperiod,visibility,uid,scid)
-            values(?,?,?,?,?,?,?,?,?)';
+            $query = 'insert into ads(title,brand,price,description,tperiod,visibility,uid,scid)
+            values(?,?,?,?,?,?,?,?)';
 
             $stmt = $this->conn->prepare($query);
             
@@ -39,20 +39,21 @@ class Ads{
             $this->brand=htmlspecialchars(strip_tags($this->brand));
             $this->ploc=htmlspecialchars(strip_tags($this->ploc));
             $this->desc=htmlspecialchars(strip_tags($this->desc));
-            $this->cid=htmlspecialchars(strip_tags($this->cid));
+            // $this->cid=htmlspecialchars(strip_tags($this->cid));
             $this->scid=htmlspecialchars(strip_tags($this->scid));
             $this->uid=htmlspecialchars(strip_tags($this->uid));
-            $this->pimg=htmlspecialchars(strip_tags($this->pimg));
+            // $this->pimg=htmlspecialchars(strip_tags($this->pimg));
             $this->visibility=htmlspecialchars(strip_tags($this->visibility));
             $this->tperiod=htmlspecialchars(strip_tags($this->tperiod));
             $this->city=htmlspecialchars(strip_tags($this->city));
             $this->state=htmlspecialchars(strip_tags($this->state));
             $this->landmark=htmlspecialchars(strip_tags($this->landmark));
+            $this->area="Chandannagar";
 
             // to get time-stamp for 'created' field
             $this->timestamp = date('Y-m-d h:i:sa');
 
-            $stmt->bind_param('ssisissiiiiis',
+            $stmt->bind_param('ssisiiii',
             $this->title,
             $this->brand,
             $this->price,
@@ -61,13 +62,11 @@ class Ads{
             $this->visibility,
             $this->uid,
             $this->scid,
-            // $this->timestamp,
-            // $this->timestamp,
-            // $this->pimg
            );
         
             if($stmt->execute())
             {
+                // $cnt = 0;
                 $last_id = mysqli_insert_id($this->conn);
                 foreach($this->images as $record)
                 {
@@ -76,17 +75,30 @@ class Ads{
                     $stmt->bind_param('is',$last_id,$record);
                     if(!$stmt->execute())
                     {
+                        $cnt=1;
                         //rollback all transaction and exit
                     }
                 }
-                $query = 'insert into locations(aid,state,city,area,landmark)values(?,?,?,?,?)';
-                $stmt = $this->conn->prepare($query);
-                $stmt->bind_param('issss',$last_id,$this->state,$this->city,$this->area,$this->landmark);
-                if(!$stmt->execute())
+                if($cnt==0)
                 {
-                    //rollback all transaction and exit
+                    $query = 'insert into locations(aid,state,city,area,landmark)values(?,?,?,?,?)';
+                    $stmt = $this->conn->prepare($query);
+                    $stmt->bind_param('issss',$last_id,$this->state,$this->city,$this->area,$this->landmark);
+                    if(!$stmt->execute())
+                    {
+                        return $this->conn->error;
+                        //rollback all transaction and exit
+                    }
+                    else
+                    {
+                         return true;
+                    }
+
                 }
-                return true;
+                else
+                {
+                    return $this->conn->error;
+                }
                 
             }
             else

@@ -1,4 +1,5 @@
 <?php 
+    error_reporting(0);
     require_once('sqlconnection.php');
     require_once('Ads.php');
 
@@ -6,6 +7,7 @@
     
     if($success == "200")
     {
+       
         //get connection variable
         $connection = $database->get_db();
 
@@ -14,6 +16,7 @@
 
         if(isset($_FILES))
         {
+            
             $images = [];
             //assign values to Posts Controller
             $post->title = $_POST['title'];
@@ -27,7 +30,6 @@
             $post->state = $_POST['state'];
             $post->visibility = $_POST['state'];
             $post->tperiod = 30;
-            $post->cid = $_POST['cat'];
             $post->scid = $_POST['scat'];
             $post->uid = 1;
             // $csvFile = $_FILES['image1']['name'];
@@ -36,7 +38,7 @@
             
             for($i=1;$i<=12;$i++)
             {
-                if($_POST)
+                if($_POST['image'.$i]=='no')
                 {
                     continue;
                 }
@@ -44,17 +46,20 @@
                 {
                     $csvFile = $_FILES['image'.$i]['name'];
                     $ctemp = $_FILES["image".$i]['tmp_name'];
+                    
                     if(move_uploaded_file($ctemp,'../storage/posts/'.$csvFile))
                     {
+                        
                         array_push($images,$csvFile);
                     }
                 }
                 
             }
-          
             $post->images = $images;
 
+            // echo $post->create();
             //Call create of PostsController to insert data to database
+
             if($post->create()){
                 echo "200";
             }

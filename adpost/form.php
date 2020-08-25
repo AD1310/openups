@@ -1,7 +1,3 @@
-
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +21,11 @@
   }
    </style>
 </head>
+
+<script>
+
+
+</script>
 <body>
      
 <nav class="navbar navbar-expand-sm  fixed-top">
@@ -42,7 +43,7 @@
               <form method="post" enctype="multipart/form-data" id="formsub">
                 <div class="form-container">
                 <p class="headtitle">SELECTED CATEGORY</p>
-                <p class="terms">Properties : Sale:Houses and Apartment</p>
+                <p class="terms" style="font-weight:bold;font-size:13px;"></p>
                 <hr>
                 <p class="includedet">INCLUDE SOME DETAILS</p>
                 <label for="adtitle">Ad title*</label>
@@ -231,7 +232,7 @@
 
                           <label>Mobile No</label><br>
                           <input type="text" id="nam" disabled="true" />
-                          <input type="hidden" id="catscat" value="1-1" disabled="true" />
+                          <!-- <input type="hidden" id="catscat" value="1-1" disabled="true" /> -->
                       </div>
 
                   
@@ -253,8 +254,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
 <script src="adpost.js"></script>
 <script>
-   cat = '<?php echo $_SESSION['scat'];?>'
-   console.log("This is cat - ",cat)
+   
+   
+ 
+  //  console.log("This is cat - ",cat)
         function checkUpload(id,name)
         {
           // console.log("id = "+id+"name = "+name)
@@ -288,7 +291,20 @@
         
       }
 
-      $(document).ready(function(){
+  $(document).ready(function(){
+
+    //getting values from hidden field from routes
+    cat = $('#catn').val()
+    scat = $('#scatn').val()
+    $('.terms').html(cat+' : '+scat)
+      
+    const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+
+    const page_type = urlParams.get('ad')
+
+    console.log("Before changeing - ",page_type);
     
     $('#preview').prop('disabled',true)
       
@@ -363,18 +379,10 @@
 
     const urlParams = new URLSearchParams(queryString);
 
-    const page_type = urlParams.get('ad')
+    const addtype = urlParams.get('ad')
 
-    console.log(page_type);
-    if(page_type == cat )
-    {
-        console.log("This is right")
-
-    }
-    else
-    {
-        console.log("This is wrong")
-    }
+    console.log("After changing  - ",addtype);
+    
 
     console.log("submit")
   
@@ -401,48 +409,49 @@
   
  
     fd.append("image1",$('#image1')[0].files[0])
-    fd.append("image2",$('#image2')[0].files[0]?$('#image2')[0].files[0]:"no")
-    fd.append("image3",$('#image3')[0].files[0]?$('#image3')[0].files[0]:"no")
-    fd.append("image4",$('#image4')[0].files[0]?$('#image4')[0].files[0]:"no")
-    fd.append("image5",$('#image5')[0].files[0]?$('#image5')[0].files[0]:"no")
-    fd.append("image6",$('#image6')[0].files[0]?$('#image6')[0].files[0]:"no")
-    fd.append("image7",$('#image7')[0].files[0]?$('#image7')[0].files[0]:"no")
-    fd.append("image8",$('#image8')[0].files[0]?$('#image8')[0].files[0]:"no")
-    fd.append("image9",$('#image9')[0].files[0]?$('#image9')[0].files[0]:"no")
-    fd.append("image10",$('#image10')[0].files[0]?$('#image10')[0].files[0]:"no")
-    fd.append("image11",$('#image11')[0].files[0]?$('#image11')[0].files[0]:"no")
-    fd.append("image12",$('#image12')[0].files[0]?$('#image12')[0].files[0]:"no")
+    fd.append("image2",$('#image2')[0].files[0]?$('#image2')[0].files[0]:"")
+    fd.append("image3",$('#image3')[0].files[0]?$('#image3')[0].files[0]:"")
+    fd.append("image4",$('#image4')[0].files[0]?$('#image4')[0].files[0]:"")
+    fd.append("image5",$('#image5')[0].files[0]?$('#image5')[0].files[0]:"")
+    fd.append("image6",$('#image6')[0].files[0]?$('#image6')[0].files[0]:"")
+    fd.append("image7",$('#image7')[0].files[0]?$('#image7')[0].files[0]:"")
+    fd.append("image8",$('#image8')[0].files[0]?$('#image8')[0].files[0]:"")
+    fd.append("image9",$('#image9')[0].files[0]?$('#image9')[0].files[0]:"")
+    fd.append("image10",$('#image10')[0].files[0]?$('#image10')[0].files[0]:"")
+    fd.append("image11",$('#image11')[0].files[0]?$('#image11')[0].files[0]:"")
+    fd.append("image12",$('#image12')[0].files[0]?$('#image12')[0].files[0]:"")
 
 
-    var catscat = $("#catscat").val()
-    catscat = catscat.split("-")
-    fd.append("cat",catscat[0])
-    fd.append("scat",catscat[1])
+
+    
+    scati = $('#scid').val()
+    console.log("Hidden - ",scati)
+    fd.append("scat",scati)
     fd.append("uid",1)
 
 
 
   
       
-// if(adtitle =='' || des =='' || price =='')
-// {
-// $('.success').fadeOut(200).hide();
-// $('.error').fadeOut(200).show();
-// }
-// else
-// {
-//   $.ajax({
-//       url: 'http://localhost/openups/database/submitadd.php',
-//       type: 'POST',
-//       data: fd,
-//       contentType: false,
-//       processData: false,
-//       success: function(response){
-//         response = response.trim()
-//         console.log("Response",response)
-//       }
-//   })
-// }
+if(adtitle =='' || des =='' || price =='')
+{
+$('.success').fadeOut(200).hide();
+$('.error').fadeOut(200).show();
+}
+else
+{
+  $.ajax({
+      url: 'http://localhost/openups/database/submitadd.php',
+      type: 'POST',
+      data: fd,
+      contentType: false,
+      processData: false,
+      success: function(response){
+        response = response.trim()
+        console.log("Response",response)
+      }
+  })
+}
 return false;
 });  
 </script>

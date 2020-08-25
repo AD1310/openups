@@ -1,10 +1,29 @@
 <?php 
 
+    $scats = array(
+        'saleH'=>array(1,'Properties','Sale:Houses & Apartment'),
+        'renH'=>array(2,'Properties','Rent:Houses & Apartment'),
+        'saleS'=>array(3,'Properties','Sale:Shops & Offices'),
+        'rentS'=>array(4,'Properties','Rent:Shops & Offices'),
+        'cars'=>array(5,'Vehicles (Four Wheelers & More)','Cars'),
+        'commercial'=>array(6,'Vehicles (Four Wheelers & More)','Other Vehicles'),
+        'spare4'=>array(7,'Vehicles (Four Wheelers & More)','Spare Parts'),
+        'bike'=>array(8,'Vehicles (Two Wheelers)','Bikes'),
+        'bicycle'=>array(9,'Vehicles (Two Wheelers)','Bicycle'),
+        'spare2'=>array(10,'Vehicles (Two Wheelers)','Spare Parts'),
+        'computer'=>array(11,'Electronics','Computer & Laptops'),
+        'game'=>array(12,'Electronics','Games & Entertainment'),
+        'camera'=>array(13,'Electronics','Cameras & Lenses')
+        );
     if(isset($_GET['ad']))
     {
-        session_start();
-        $_SESSION['scat'] = $_GET['ad'];
+        $cat = $scats[$_GET['ad']];
+        
+        echo '<input type="hidden" value="'.$cat[0].'" id="scid" >';
+        echo '<input type="hidden" value="'.$cat[1].'" id="catn" >';
+        echo '<input type="hidden" value="'.$cat[2].'" id="scatn" >';
         include('adpost/form.php');
+
     }
     if(isset($_GET["sell"]))
     {
@@ -111,9 +130,9 @@
         include('./productdetails.php');
     }
 
-    else
-    {
-        header("refresh:0;url=./");
-    }
+    // else
+    // {
+    //     header("refresh:0;url=./");
+    // }
 
 ?>
