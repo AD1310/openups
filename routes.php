@@ -1,5 +1,11 @@
 <?php 
 
+    if(isset($_GET['ad']))
+    {
+        session_start();
+        $_SESSION['scat'] = $_GET['ad'];
+        include('adpost/form.php');
+    }
     if(isset($_GET["sell"]))
     {
         include('adpost/addpost.php');

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./public/css/forms/forms.css">
-    <script src="forms.js"></script>
+    <script src="./public/js/forms/forms.js"></script>
 
    <style>
     .modal-body{
@@ -245,12 +248,13 @@
           </section>
         </section>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
-      <script src="adpost.js"></script>
-      <script>
-       
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+<script src="adpost.js"></script>
+<script>
+   cat = '<?php echo $_SESSION['scat'];?>'
+   console.log("This is cat - ",cat)
         function checkUpload(id,name)
         {
           // console.log("id = "+id+"name = "+name)
@@ -265,7 +269,6 @@
 
           }
         }
-       
         function previewForm() {
         var sel=document.getElementById("state");
             //console.log(sel);
@@ -284,81 +287,95 @@
         document.getElementById('nam').value=document.getElementById('namebox1').value;
         
       }
-      </script> 
-<script>
 
-$(document).ready(function(){
+      $(document).ready(function(){
     
-  $('#preview').prop('disabled',true)
-    
-        document.getElementById("List").style.display = "block";
-        $("#sendotp").click(function(){
-
-            var mobilenumber = $("#namebox1").val();
-            $.ajax({
-                url: 'http://localhost/openups/database/sendotp.php',
-                type: 'POST',
-                data: {'mobNo':mobilenumber},
-                contentType: false,
-                processData: false,
-                success: function(response){
-                  response = response.trim()
-                  if(response=="success")
-                  {
-                    
-                    inputbox1 = '<h5 id="descs">Enter you OTP*</h5>'
-                    inputbox2 = '<span class="input-symbol-phn">'
-                    inputbox3 = '<input type="text" id="namebox2"  style="width:70%;"/></span>'
-                    inputbox4 = ' <button id="verify"  type="button" class="form-btn"   >Verify OTP</button>'
-                    $('#sendotp').prop('disabled',true);
-                    // $("#sendotp").prop("value", "Prop Click"); 
-                    $("#sendotp").html("OTP Sent");
-                      $('.verifydiv').append(inputbox1+inputbox2+inputbox3+inputbox4)
-                  
-                  }
-                  else
-                  {
-                      alert("Unable to verify your mobile number");
-                  }
-                  // console.log("Response",response)
-                }
-            })
-})
-
-
-$(document).on('click','#verify',function(){
-              console.log("This is click")
-              var otp = $("#namebox2").val();
+    $('#preview').prop('disabled',true)
+      
+          document.getElementById("List").style.display = "block";
+          $("#sendotp").click(function(){
+  
+              var mobilenumber = $("#namebox1").val();
               $.ajax({
-                  url: 'http://localhost/openups/database/verifyotp.php',
+                  url: 'http://localhost/openups/database/sendotp.php',
                   type: 'POST',
-                  data: {'otp':otp},
-
+                  data: {'mobNo':mobilenumber},
+                  contentType: false,
+                  processData: false,
                   success: function(response){
                     response = response.trim()
-                    if(response == "success")
+                    if(response=="success")
                     {
-                        $('#preview').prop('disabled',false)
-
+                      
+                      inputbox1 = '<h5 id="descs">Enter you OTP*</h5>'
+                      inputbox2 = '<span class="input-symbol-phn">'
+                      inputbox3 = '<input type="text" id="namebox2"  style="width:70%;"/></span>'
+                      inputbox4 = ' <button id="verify"  type="button" class="form-btn"   >Verify OTP</button>'
+                      $('#sendotp').prop('disabled',true);
+                      // $("#sendotp").prop("value", "Prop Click"); 
+                      $("#sendotp").html("OTP Sent");
+                        $('.verifydiv').append(inputbox1+inputbox2+inputbox3+inputbox4)
+                    
                     }
                     else
                     {
-                        alert("Not verified")
+                        alert("Unable to verify your mobile number");
                     }
-                    console.log("Response",response)
+                    // console.log("Response",response)
                   }
               })
-        })
+  })
+  
+  
+  $(document).on('click','#verify',function(){
+                console.log("This is click")
+                var otp = $("#namebox2").val();
+                $.ajax({
+                    url: 'http://localhost/openups/database/verifyotp.php',
+                    type: 'POST',
+                    data: {'otp':otp},
+  
+                    success: function(response){
+                      response = response.trim()
+                      if(response == "success")
+                      {
+                          $('#preview').prop('disabled',false)
+  
+                      }
+                      else
+                      {
+                          alert("Not verified")
+                      }
+                      console.log("Response",response)
+                    }
+                })
+          })
+  
+  
+  
+  })
 
+  
+  
+  $("#submit").click(function() {
 
+    const queryString = window.location.search;
 
-})
+    const urlParams = new URLSearchParams(queryString);
 
+    const page_type = urlParams.get('ad')
 
+    console.log(page_type);
+    if(page_type == cat )
+    {
+        console.log("This is right")
 
+    }
+    else
+    {
+        console.log("This is wrong")
+    }
 
-
-$("#submit").click(function() {
     console.log("submit")
   
     var fd = new FormData();
@@ -381,20 +398,7 @@ $("#submit").click(function() {
     var k = 'image'; 
     var i = 0; 
 
-    // for(i = 1; i <=12; i++) { 
-    //     // alert('This is ',$('#image'+i)[0].files[0]) 
-    //     if(!document.getElementById("image"+i).value)
-    //     {
-    //       str = "image"+i;
-    //       fd.append("image"+i,$('#image'+i)[0].files[0])
-    //     }
-    //     else
-    //     {
-    //       fd.append("image"+i,"noimg")
-    //     }
-       
-    // } 
-
+  
  
     fd.append("image1",$('#image1')[0].files[0])
     fd.append("image2",$('#image2')[0].files[0]?$('#image2')[0].files[0]:"no")
@@ -420,27 +424,26 @@ $("#submit").click(function() {
 
   
       
-if(adtitle =='' || des =='' || price =='')
-{
-$('.success').fadeOut(200).hide();
-$('.error').fadeOut(200).show();
-}
-else
-{
-  $.ajax({
-      url: 'http://localhost/openups/database/submitadd.php',
-      type: 'POST',
-      data: fd,
-      contentType: false,
-      processData: false,
-      success: function(response){
-        response = response.trim()
-        console.log("Response",response)
-      }
-  })
-}
+// if(adtitle =='' || des =='' || price =='')
+// {
+// $('.success').fadeOut(200).hide();
+// $('.error').fadeOut(200).show();
+// }
+// else
+// {
+//   $.ajax({
+//       url: 'http://localhost/openups/database/submitadd.php',
+//       type: 'POST',
+//       data: fd,
+//       contentType: false,
+//       processData: false,
+//       success: function(response){
+//         response = response.trim()
+//         console.log("Response",response)
+//       }
+//   })
+// }
 return false;
-});
-</script>     
-</body>
+});  
+</script>
 </html>

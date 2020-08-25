@@ -51,10 +51,10 @@
 		  	<div class="dropdown dropright" id="y">
 			    <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cat">&nbsp;<i class="fa fa-building" aria-hidden="true" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;Properties <div class="glyphicon glyphicon-chevron-right" style="font-size:20px;float: right;"></div></a>
 			    <div class="dropdown-menu">
-			      <a class="dropdown-item" href="./routes.php?saleH"><i class="fa fa-home" aria-hidden="true"></i> &nbsp; Sale:Houses & Apartment</a>
-			      <a class="dropdown-item" href="./routes.php?rentH"><i class="fa fa-home" aria-hidden="true"></i> &nbsp; Rent:Houses & Apartment</a>
-				  <a class="dropdown-item" href="./routes.php?saleS"><i class="fa fa-industry" aria-hidden="true"></i> &nbsp; Sale:Shops & Offices</a>  
-				  <a class="dropdown-item" href="./routes.php?rentS"><i class="fa fa-industry" aria-hidden="true"></i> &nbsp; Rent:Shops & Offices</a>
+			      <a class="dropdown-item" href="./routes.php?ad=saleH"><i class="fa fa-home" aria-hidden="true"></i> &nbsp; Sale:Houses & Apartment</a>
+			      <a class="dropdown-item" href="./routes.php?ad=rentH"><i class="fa fa-home" aria-hidden="true"></i> &nbsp; Rent:Houses & Apartment</a>
+				  <a class="dropdown-item" href="./routes.php?ad=saleS"><i class="fa fa-industry" aria-hidden="true"></i> &nbsp; Sale:Shops & Offices</a>  
+				  <a class="dropdown-item" href="./routes.php?ad=rentS"><i class="fa fa-industry" aria-hidden="true"></i> &nbsp; Rent:Shops & Offices</a>
 			    
 			    </div>
 		  	</div>
@@ -63,9 +63,9 @@
 		  	<div class="dropdown dropright" id="y">
 			    <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cat"><i class="fa fa-car" aria-hidden="true" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;Vehicles (4 wheelers & More)<div class="glyphicon glyphicon-chevron-right" style="font-size:20px;float: right;"></div></a>
 			    <div class="dropdown-menu">
-				  <a class="dropdown-item" href="./routes.php?cars"><i class="fa fa-taxi" aria-hidden="true"></i> &nbsp; Cars</a>
-			      <a class="dropdown-item" href="./routes.php?commercial"><i class="fa fa-truck" aria-hidden="true"></i> &nbsp; Other Vehicles</a>
-			      <a class="dropdown-item" href="./routes.php?spare4"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp; Spare Parts</a>
+				  <a class="dropdown-item" href="./routes.php?ad=cars"><i class="fa fa-taxi" aria-hidden="true"></i> &nbsp; Cars</a>
+			      <a class="dropdown-item" href="./routes.php?ad=commercial"><i class="fa fa-truck" aria-hidden="true"></i> &nbsp; Other Vehicles</a>
+			      <a class="dropdown-item" href="./routes.php?ad=spare4"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp; Spare Parts</a>
 			    </div>
 		  	</div>
 		  </li>	
@@ -73,9 +73,9 @@
 			<div class="dropdown dropright" id="y">
 			  <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cat"><i class="fa fa-motorcycle" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;Vehicles (Two Wheelers)<div class="glyphicon glyphicon-chevron-right" style="font-size:20px;float: right;"></div></a>
 			  <div class="dropdown-menu">
-				<a class="dropdown-item" href="./routes.php?bike"><i class="fa fa-motorcycle" aria-hidden="true"></i> &nbsp; Bikes</a>
-                <a class="dropdown-item" href="./routes.php?bicycle"><i class="fa fa-bicycle" aria-hidden="true"></i> &nbsp; Bicycle</a>
-			    <a class="dropdown-item" href="./routes.php?spare2"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp; Spare Parts</a>
+				<a class="dropdown-item" href="./routes.php?ad=bike"><i class="fa fa-motorcycle" aria-hidden="true"></i> &nbsp; Bikes</a>
+                <a class="dropdown-item" href="./routes.php?ad=bicycle"><i class="fa fa-bicycle" aria-hidden="true"></i> &nbsp; Bicycle</a>
+			    <a class="dropdown-item" href="./routes.php?ad=spare2"><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp; Spare Parts</a>
 			  </div>
 			</div>
 		</li>			
@@ -84,9 +84,9 @@
 		  	<div class="dropdown dropright" id="y">
 			    <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cat"><i class="fa fa-television" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Electronics<div class="glyphicon glyphicon-chevron-right" style="font-size:20px;float: right;"></div></a>
 			    <div class="dropdown-menu">
-			      <a class="dropdown-item" href="./routes.php?computer"><i class="fa fa-laptop" aria-hidden="true"></i> &nbsp; Computer & Laptops</a>
-			      <a class="dropdown-item" href="./routes.php?game"><i class="fa fa-gamepad" aria-hidden="true"></i> &nbsp; Games & Entertainment</a>
-			      <a class="dropdown-item" href="./routes.php?camera"><i class="fa fa-camera-retro" aria-hidden="true"></i> &nbsp; Cameras & Lenses</a>
+			      <a class="dropdown-item" href="./routes.php?ad=computer"><i class="fa fa-laptop" aria-hidden="true"></i> &nbsp; Computer & Laptops</a>
+			      <a class="dropdown-item" href="./routes.php?ad=game"><i class="fa fa-gamepad" aria-hidden="true"></i> &nbsp; Games & Entertainment</a>
+			      <a class="dropdown-item" href="./routes.php?ad=camera"><i class="fa fa-camera-retro" aria-hidden="true"></i> &nbsp; Cameras & Lenses</a>
 			    </div>
 		 	</div>
 		  </li>
@@ -95,8 +95,8 @@
 		  	<div class="dropdown dropright" id="y">
 		    <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cat"><i class="fa fa-shopping-bag" aria-hidden="true" style='font-size:20px'></i>&nbsp;&nbsp;&nbsp;Fashion<div class="glyphicon glyphicon-chevron-right" style="font-size:20px;float: right;"></div></a>
 		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="./routes.php?men"><i class="fa fa-male" aria-hidden="true"></i> &nbsp; Men</a>
-		      <a class="dropdown-item" href="./routes.php?women"><i class="fa fa-female" aria-hidden="true"></i> &nbsp; Women</a>
+		      <a class="dropdown-item" href="./routes.php?ad=men"><i class="fa fa-male" aria-hidden="true"></i> &nbsp; Men</a>
+		      <a class="dropdown-item" href="./routes.php?ad=women"><i class="fa fa-female" aria-hidden="true"></i> &nbsp; Women</a>
 	
 		    </div>
 		  </div>
@@ -188,5 +188,9 @@
 
 <script defer="true" src="http://localhost/openups/public/js/forms/addpost.js"></script>
 
+
+  <script>
+
+</script>
 </body>
 </html>
