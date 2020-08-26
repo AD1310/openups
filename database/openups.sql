@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2020 at 10:46 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- Generation Time: Aug 26, 2020 at 06:08 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -50,6 +51,13 @@ CREATE TABLE `ads` (
   `scid` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ads`
+--
+
+INSERT INTO `ads` (`aid`, `title`, `description`, `brand`, `price`, `tperiod`, `visibility`, `uid`, `scid`) VALUES
+(7, 'wrist watch', 'my watch to sell', 'g shock', 5000, 30, 1, 3, 14);
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +68,18 @@ CREATE TABLE `cat` (
   `cid` int(10) NOT NULL,
   `cname` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cat`
+--
+
+INSERT INTO `cat` (`cid`, `cname`) VALUES
+(1, 'property'),
+(2, 'vehicle4'),
+(3, 'vehicle2'),
+(4, 'electronics'),
+(5, 'fashion'),
+(6, 'services');
 
 -- --------------------------------------------------------
 
@@ -87,6 +107,27 @@ CREATE TABLE `scat` (
   `scname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `scat`
+--
+
+INSERT INTO `scat` (`scid`, `cid`, `scname`) VALUES
+(1, 1, 'saleh'),
+(2, 1, 'renth'),
+(3, 1, 'sales'),
+(4, 1, 'rents'),
+(5, 2, 'cars'),
+(6, 2, 'otherv'),
+(7, 2, 'spare4'),
+(8, 3, 'bikes'),
+(9, 3, 'bicycle'),
+(10, 3, 'spare2'),
+(11, 4, 'computer'),
+(12, 4, 'games'),
+(13, 4, 'camera'),
+(14, 5, 'men'),
+(15, 5, 'women');
+
 -- --------------------------------------------------------
 
 --
@@ -110,7 +151,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`uid`, `username`, `password`, `email`, `create_datetime`, `location`, `userphoto`, `phonenum`) VALUES
 (1, 'psgaikwad', '202cb962ac59075b964b07152d234b70', 'pragatigaikwad280@gmail.com', '2020-08-26', 'chakan', 'fb1.jpg', 2147483647),
-(2, 'psgaikwad', '202cb962ac59075b964b07152d234b70', 'amolgaikwad280@gmail.com', '2020-08-26', 'mumbai', 'fb3.jpg', 1234567890);
+(2, 'psgaikwad', '202cb962ac59075b964b07152d234b70', 'amolgaikwad280@gmail.com', '2020-08-26', 'mumbai', 'fb3.jpg', 1234567890),
+(3, 'Atharva Deshpande', '25f9e794323b453885f5181f1b624d0b', 'asdeshpande@mitaoe.ac.in', '2020-08-26', 'pune', 'Photograph.jpg', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -163,25 +205,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `aid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `aid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cat`
 --
 ALTER TABLE `cat`
-  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `scat`
 --
 ALTER TABLE `scat`
-  MODIFY `scid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `scid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

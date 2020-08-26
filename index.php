@@ -426,17 +426,12 @@ if($_SESSION['username']){
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Bulk Products For Sale</h2>
+                    <h2 id='allb'>All Product Listing</h2>
                 </div>
                 <div class="featured__controls">
                     <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".oranges">Electronics</li>
-                        <li data-filter=".fresh-meat">Fashion</li>
-                        <li data-filter=".vegetables">Properties</li>
-                        <li data-filter=".fastfood">Pets</li>
-                        <li data-filter=".vehicles">Vehicles</li>
-
+                        <li class="active" id="allproducts">All Products</li>
+                        <li id="bulkproducts">Bulk Products</li>
                     </ul>
                 </div>
             </div>
@@ -701,8 +696,8 @@ if($_SESSION['username']){
 <script src="public/js/owl.carousel.min.js"></script>
 <script src="public/js/main.js"></script>
 <script>
-    $("#sell").click(function(){
-        window.open("/post", "_self");
+$("#sell").click(function(){
+    window.open("/post", "_self");
 
 });
 
@@ -713,59 +708,114 @@ $('.togglecat').children().click(function(){
     event.stopPropagation();
 });
 
-        $(document).mouseup(function(e){
-            console.log("Hello World")
-            var container = $(".details");
-            $('#profile').click(function() {
-                <?php
-            if($user){
-                ?>
-               $('.details').toggle();
-                <?php
-         }else{
-                ?>               
-                window.location.href = "login/first.php";
-            <?php
-         }
-                ?>
-              
-              });
-            // If the target of the click isn't the container
-            if(!container.is(e.target) && container.has(e.target).length === 0){
-                container.hide();
-            }
-                
-            
+$(document).mouseup(function(e){
+    console.log("Hello World")
+    var container = $(".details");
+    $('#profile').click(function() {
+        <?php
+    if($user){
+        ?>
+        $('.details').toggle();
+        <?php
+    }else{
+        ?>               
+        window.location.href = "login/first.php";
+    <?php
+    }
+        ?>
+        
         });
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+        container.hide();
+    }
+        
+    
+});
 
-        $(document).ready(function(){
- 
-            <?php
-            if($user){
-                ?>
-               $('#heart').show(); 
-               $('#msg').show(); 
-                <?php
-         }else{
-                ?> 
-                $('#heart').hide(); 
-                $('#msg').hide();               
-               
-            <?php
-         }
-                ?>
+$(document).ready(function(){
 
-            $.ajax({
-                url:'./api/listads.php',
-                type:'POST',
-                success:function(para)
-                {
-                    para = JSON.parse(para)
-                    alert(para)
-                }
-            })
-        })
+    <?php
+    if($user){
+        ?>
+        $('#heart').show(); 
+        $('#msg').show(); 
+        <?php
+    }else{
+        ?> 
+        $('#heart').hide(); 
+        $('#msg').hide();               
+        
+    <?php
+    }
+        ?>
 
+    $.ajax({
+        url:'./api/listads.php',
+        type:'POST',
+        data:
+        {'category':'allproducts'},
+        success:function(para)
+        {
+            console.log(para)
+            if(para != 'nodata')
+            {
+                para = JSON.parse(para)
+                alert(para)
+            }
+            else
+            {
+                alert(para)
+            }
+        }
+    })
+})
+
+$('#bulkproducts').click(function(){
+    $.ajax({
+        url:'./api/listads.php',
+        type:'POST',
+        data:
+        {'category':'bulkproducts'},
+        success:function(para)
+        {
+            console.log(para)
+
+            if(para != 'nodata')
+            {
+                para = JSON.parse(para)
+                alert(para)
+            }
+            else
+            {
+                alert(para)
+            }
+        }
+    })
+})
+
+$('#allproducts').click(function(){
+    $.ajax({
+        url:'./api/listads.php',
+        type:'POST',
+        data:
+        {'category':'allproducts'},
+        success:function(para)
+        {
+            console.log(para)
+
+            if(para != 'nodata')
+            {
+                para = JSON.parse(para)
+                alert(para)
+            }
+            else
+            {
+                alert(para)
+            }
+        }
+    })
+})
 
 </script>
                                                                           
