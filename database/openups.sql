@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2020 at 04:31 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Aug 26, 2020 at 10:46 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,7 +31,6 @@ CREATE TABLE `adimgs` (
   `aid` int(10) NOT NULL,
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table openups.adimgs: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `openups`.`adimgs`' at line 1
 
 -- --------------------------------------------------------
 
@@ -97,13 +95,22 @@ CREATE TABLE `scat` (
 
 CREATE TABLE `users` (
   `uid` int(10) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `pwd` varchar(50) NOT NULL,
-  `phone` int(20) NOT NULL,
-  `loc` varchar(200) NOT NULL,
-  `photo` varchar(100) NOT NULL
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `create_datetime` date NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `userphoto` varchar(100) NOT NULL,
+  `phonenum` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `username`, `password`, `email`, `create_datetime`, `location`, `userphoto`, `phonenum`) VALUES
+(1, 'psgaikwad', '202cb962ac59075b964b07152d234b70', 'pragatigaikwad280@gmail.com', '2020-08-26', 'chakan', 'fb1.jpg', 2147483647),
+(2, 'psgaikwad', '202cb962ac59075b964b07152d234b70', 'amolgaikwad280@gmail.com', '2020-08-26', 'mumbai', 'fb3.jpg', 1234567890);
 
 --
 -- Indexes for dumped tables
@@ -174,7 +181,7 @@ ALTER TABLE `scat`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

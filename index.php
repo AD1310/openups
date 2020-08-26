@@ -1,3 +1,10 @@
+<?php
+error_reporting(0);
+session_start();
+if($_SESSION['username']){
+    $user=$_SESSION['username']; 
+}
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -296,10 +303,10 @@
                        <div class="hero__search__phone__icon">
                         <a href="./routes.php?sell"><div type="submit" id="sell" >SELL</div></a>
                        </div>  
-                        <div class="hero__search__phone__icon">
-                                <a href="#"><i class="fa fa-heart" style="color:#000033"></i> <span>1</span></a>     
+                        <div id="heart" class="hero__search__phone__icon">
+                                <a href="#"><i class="fa fa-heart"  style="color:#000033"></i> <span>1</span></a>     
                         </div>  
-                        <div class="hero__search__phone__icon">
+                        <div id="msg" class="hero__search__phone__icon">
                             <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
                         </div>  
                         <div class="hero__search__phone__icon" id="profile" style="cursor:pointer;">
@@ -313,9 +320,9 @@
                                     <div class="profiledetailsdiv">
                                         <div class="hello">
                                         <span>Hello</span>,
-                                <div data-aut-id="step" class="rui-1xby4 rui-3NjYq"></div>        </div>
+                                <div data-aut-id="step" class="rui-1xby4 rui-3NjYq"></div>Kalpesh Waghmare </div>
                                     </div>
-                                    <div class="name">Kalpesh Waghmare</div>
+                                    <div class="name"></div>
                                     <span class="viewandedit"><a href="/edit"><span>View and edit profile</span></a></span>
                                 </a>
                             </div>
@@ -358,7 +365,7 @@
                                     <span>Settings</span>
                                 </a>
                                
-                                <a href="/logout" class="myadsdetails">
+                                <a href="./routes.php?logout" class="myadsdetails">
                                     <div style="padding: 2px 16px 0 0;">
                                         <svg width="23px" height="23px" viewBox="0 0 1024 1024">
                                             <path d="M128 85.333l-42.667 42.667v768l42.667 42.667h768l42.667-42.667v-213.333l-42.667-42.667-42.667 42.667v170.667h-682.667v-682.667h682.667v170.667l42.667 42.667 42.667-42.667v-213.333l-42.667-42.667h-768zM494.336 298.667l-183.168 183.168v60.331l183.168 183.168h60.331v-60.331l-110.336-110.336h323.669l42.667-42.667-42.667-42.667h-323.669l110.336-110.336v-60.331h-60.331z">
@@ -696,7 +703,7 @@
 <script>
     $("#sell").click(function(){
         window.open("/post", "_self");
-//   alert("The paragraph was clicked.");
+
 });
 
 $('.sub').hide(); //Hide children by default
@@ -710,7 +717,18 @@ $('.togglecat').children().click(function(){
             console.log("Hello World")
             var container = $(".details");
             $('#profile').click(function() {
-                $('.details').toggle();
+                <?php
+            if($user){
+                ?>
+               $('.details').toggle();
+                <?php
+         }else{
+                ?>               
+                window.location.href = "login/first.php";
+            <?php
+         }
+                ?>
+              
               });
             // If the target of the click isn't the container
             if(!container.is(e.target) && container.has(e.target).length === 0){
@@ -721,6 +739,22 @@ $('.togglecat').children().click(function(){
         });
 
         $(document).ready(function(){
+ 
+            <?php
+            if($user){
+                ?>
+               $('#heart').show(); 
+               $('#msg').show(); 
+                <?php
+         }else{
+                ?> 
+                $('#heart').hide(); 
+                $('#msg').hide();               
+               
+            <?php
+         }
+                ?>
+
             $.ajax({
                 url:'./api/listads.php',
                 type:'POST',
@@ -734,3 +768,4 @@ $('.togglecat').children().click(function(){
 
 
 </script>
+                                                                          

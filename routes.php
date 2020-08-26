@@ -129,10 +129,11 @@
     {
         include('./productdetails.php');
     }
+    else if(isset($_GET["logout"]))
+    {
+        include('login/logout.php');
+    }
 
-    // else
-    // {
-    //     header("refresh:0;url=./");
-    // }
+
 
 ?>
