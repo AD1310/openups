@@ -641,7 +641,7 @@ $('#bulkproducts').click(function(){
             }
             else
             {
-                $('#pcards').empty()
+                $('#pcards').empty() 
             }
         }
     })
