@@ -6,7 +6,7 @@ if(isset($_POST))
     if($_POST['category'] == 'allproducts')
     {
         // $sql = 'SELECT aid,title,price from ads where visibility = 1';
-        $sql = 'SELECT ads.title, ads.price, locations.area
+        $sql = 'SELECT ads.title, ads.price, locations.city
                 FROM ads
                 INNER JOIN locations ON ads.aid=locations.aid and ads.visibility = 1';
 
@@ -17,7 +17,7 @@ if(isset($_POST))
         {
             while($row = $result->fetch_assoc()) 
             {
-              array_push($arr,[$row["title"],$row["price"],$row["area"]]);
+              array_push($arr,[$row["title"],$row["price"],$row["city"]]);
             }
             echo json_encode($arr);
         } 
