@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2020 at 06:08 PM
+-- Generation Time: Aug 27, 2020 at 06:23 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -56,7 +56,7 @@ CREATE TABLE `ads` (
 --
 
 INSERT INTO `ads` (`aid`, `title`, `description`, `brand`, `price`, `tperiod`, `visibility`, `uid`, `scid`) VALUES
-(7, 'wrist watch', 'my watch to sell', 'g shock', 5000, 30, 1, 3, 14);
+(7, 'Wrist Watch', 'my watch to sell', 'g shock', 5000, 30, 1, 3, 14);
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,13 @@ CREATE TABLE `locations` (
   `area` varchar(20) NOT NULL,
   `landmark` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`aid`, `state`, `city`, `area`, `landmark`) VALUES
+(7, 'Maharashtra', 'Pune', 'Chinchwad', 'Keshav Nagar');
 
 -- --------------------------------------------------------
 

@@ -441,9 +441,9 @@ if($_SESSION['username']){
                 
                 <div class="row" style="margin-left:1%;" >
                     <div class="col-lg-12 col-sm-8">
-                        <div class="row" >
+                        <div class="row" id="pcards">
                             <!-- {{-- Property 1 --}} -->
-                            <a href="./routes.php?product">
+                            <!-- <a href="./routes.php?product">
                             <div id="cardDiv" class="col-lg-3 col-sm-2">
                                 <div class="properties" style="border:2px solid grey;border-radius:3px;">
                                     <div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg"  id="imgcard" class="img-responsive" alt="properties">
@@ -464,165 +464,8 @@ if($_SESSION['username']){
                                     </div>
                                 </div>  
                             </div>
-                            </a>
-                            <!-- {{-- Property 2--}} -->
-                            <a href="./routes.php?product">
-                            <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder" ><img src="storage/images/mobile.jpg " id="imgcard" class="img-responsive" alt="properties">
-                                        <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a> 
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                              <!-- {{-- Property 3--}} -->
-                            <a href="./routes.php?product">
-                              <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
-                                        
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                              <!-- {{-- Property 4--}} -->
-                            <a href="./routes.php?product">
-                              <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder"><img src="storage/images/bike.jpeg " id="imgcard" class="img-responsive" alt="properties">
-                                        <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a> 
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                            <!-- {{-- Property 4--}} -->
-                            <a href="./routes.php?product">
-                            <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
-                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a>  --}} -->
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                            <!-- {{-- Property 4--}} -->
-                            <a href="./routes.php?product">
-                            <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder"><img src="storage/images/tv2.jpeg " id="imgcard" class="img-responsive" alt="properties">
-                                        <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a> 
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                            <!-- {{-- Property 4--}} -->
-                            <a href="./routes.php?product">
-                            <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder"><img src="storage/images/about.jpg " id="imgcard" class="img-responsive" alt="properties">
-                                        <!-- {{-- <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a>  --}} -->
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
-                            <!-- {{-- Property 4--}} -->
-                            <a href="./routes.php?product">
-                            <div id="cardDiv" class="col-lg-3 col-sm-4">
-                                <div class="properties" style="border:2px solid grey;border-radius:3px;">
-                                    <div class="image-holder" ><img src="storage/images/about.jpg" id="imgcard"  class="img-responsive" alt="properties">
-                                        <a class='patch sale' href='#' style='color:black;'>
-                                            <div class='thepatch'>Featured</div>
-                                            <div class='patch-background'> </div>
-                                        </a> 
-                                        <ul class="featured__item__pic__hover favorites">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
-                                            </i></a></li>
-                                        </ul> 
-                                        <p class="price" >₹8,520</p> 
-                                        <h4><a href="property-detail.php" class="title" >Bunglow</a></h4>
-                                    
-                                            <p class="address">Chandannagar, Pune</p>
-                                        
-                                    </div>
-                                </div>   
-                            </div>
-                            </a>
+                            </a> -->
+                            
                         </div>
                     </div>
                         
@@ -760,12 +603,17 @@ $(document).ready(function(){
             console.log(para)
             if(para != 'nodata')
             {
+                $('#pcards').empty()
                 para = JSON.parse(para)
-                alert(para)
+                for(let i=0;i<para.length;i++)
+                {
+                    var str = '<a href="./routes.php?product"><div id="cardDiv" class="col-lg-3 col-sm-2"><div class="properties" style="border:2px solid grey;border-radius:3px;"><div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg" id="imgcard" class="img-responsive" alt="properties"><a class="patch sale" href="#" style="color:black;"><div class="thepatch">Featured</div><div class="patch-background"> </div></a><ul class="featured__item__pic__hover favorites"><li><a href="#"><i class="fa fa-heart"></i></a></li><li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></i></a></li></ul><p class="price" >₹'+para[0][1]+'</p><h4><a href="property-detail.php" class="title" > '+para[0][0]+'</a></h4><p class="address">'+para[0][2]+'</p></div></div></div></a>'
+                    $('#pcards').append(str)
+                }
             }
             else
             {
-                alert(para)
+                $('#pcards').empty()
             }
         }
     })
@@ -783,12 +631,17 @@ $('#bulkproducts').click(function(){
 
             if(para != 'nodata')
             {
+                $('#pcards').empty()
                 para = JSON.parse(para)
-                alert(para)
+                for(let i=0;i<para.length;i++)
+                {
+                    var str = '<a href="./routes.php?product"><div id="cardDiv" class="col-lg-3 col-sm-2"><div class="properties" style="border:2px solid grey;border-radius:3px;"><div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg" id="imgcard" class="img-responsive" alt="properties"><a class="patch sale" href="#" style="color:black;"><div class="thepatch">Featured</div><div class="patch-background"> </div></a><ul class="featured__item__pic__hover favorites"><li><a href="#"><i class="fa fa-heart"></i></a></li><li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></i></a></li></ul><p class="price" >₹'+para[0][1]+'</p><h4><a href="property-detail.php" class="title" > '+para[0][0]+'</a></h4><p class="address">'+para[0][2]+'</p></div></div></div></a>'
+                    $('#pcards').append(str)
+                }
             }
             else
             {
-                alert(para)
+                $('#pcards').empty()
             }
         }
     })
@@ -806,12 +659,17 @@ $('#allproducts').click(function(){
 
             if(para != 'nodata')
             {
+                $('#pcards').empty()
                 para = JSON.parse(para)
-                alert(para)
+                for(let i=0;i<para.length;i++)
+                {
+                    var str = '<a href="./routes.php?product"><div id="cardDiv" class="col-lg-3 col-sm-2"><div class="properties" style="border:2px solid grey;border-radius:3px;"><div class="image-holder" style="width:100%;height:100%;"><img src="storage/images/mobile.jpg" id="imgcard" class="img-responsive" alt="properties"><a class="patch sale" href="#" style="color:black;"><div class="thepatch">Featured</div><div class="patch-background"> </div></a><ul class="featured__item__pic__hover favorites"><li><a href="#"><i class="fa fa-heart"></i></a></li><li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></i></a></li></ul><p class="price" >₹'+para[0][1]+'</p><h4><a href="property-detail.php" class="title" > '+para[0][0]+'</a></h4><p class="address">'+para[0][2]+'</p></div></div></div></a>'
+                    $('#pcards').append(str)
+                }
             }
             else
             {
-                alert(para)
+                $('#pcards').empty()
             }
         }
     })

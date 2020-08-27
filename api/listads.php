@@ -5,7 +5,11 @@ if(isset($_POST))
     require('../database/connection.php');
     if($_POST['category'] == 'allproducts')
     {
-        $sql = 'SELECT aid,title,price from ads where visibility = 1';
+        // $sql = 'SELECT aid,title,price from ads where visibility = 1';
+        $sql = 'SELECT ads.title, ads.price, locations.area
+                FROM ads
+                INNER JOIN locations ON ads.aid=locations.aid and ads.visibility = 1';
+
         $result = $con->query($sql);
         $arr = [];
         
@@ -13,7 +17,7 @@ if(isset($_POST))
         {
             while($row = $result->fetch_assoc()) 
             {
-              array_push($arr,[$row["aid"],$row["title"],$row["price"]]);
+              array_push($arr,[$row["title"],$row["price"],$row["area"]]);
             }
             echo json_encode($arr);
         } 
