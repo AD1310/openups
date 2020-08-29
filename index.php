@@ -303,12 +303,12 @@ if($_SESSION['username']){
                        <div class="hero__search__phone__icon">
                         <a href="./routes.php?sell"><div type="submit" id="sell" >SELL</div></a>
                        </div>  
+                       <div id="msg" class="hero__search__phone__icon">
+                            <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
+                        </div> 
                         <div id="heart" class="hero__search__phone__icon">
                                 <a href="#"><i class="fa fa-heart"  style="color:#000033"></i> <span>1</span></a>     
-                        </div>  
-                        <div id="msg" class="hero__search__phone__icon">
-                            <a href="#"><i class="fa fa-envelope" style="color:#000033"></i> <span>3</span></a> 
-                        </div>  
+                        </div> 
                         <div class="hero__search__phone__icon" id="profile" style="cursor:pointer;">
                             <i class="fa fa-user"></i>
                         </div> 
@@ -586,8 +586,8 @@ $(document).ready(function(){
         <?php
     }else{
         ?> 
-        $('#heart').hide(); 
-        $('#msg').hide();               
+$('#msg').hide(); 
+           
         
     <?php
     }
