@@ -20,21 +20,22 @@
             $images = [];
             //assign values to Posts Controller
             $post->title = $_POST['title'];
-            $post->brand = "titan";
-            $post->desc = $_POST['desc'];
+            $post->brand = $_POST['brand'];
+            $post->desc = $_POST['description'];
             $post->price = $_POST['price'];
             $post->name = $_POST['name'];
             $post->ploc = "pune";
             $post->landmark = $_POST['landmark'];
             $post->city = $_POST['city'];
             $post->state = $_POST['state'];
-            $post->visibility = $_POST['state'];
+            $post->area = $_POST['area'];
+            $post->visibility = 1;
             $post->tperiod = 30;
             $post->scid = $_POST['scat'];
             $post->uid = 1;
-            // $csvFile = $_FILES['image1']['name'];
+            // $imgFile = $_FILES['image1']['name'];
             // $ctemp = $_FILES["image1"]['tmp_name'];
-            // $post->pimg ='../storage/posts/'.$csvFile;
+            // $post->pimg ='../storage/posts/'.$imgFile;
             
             for($i=1;$i<=12;$i++)
             {
@@ -44,13 +45,13 @@
                 }
                 else
                 {
-                    $csvFile = $_FILES['image'.$i]['name'];
+                    $imgFile = $_FILES['image'.$i]['name'];
                     $ctemp = $_FILES["image".$i]['tmp_name'];
                     
-                    if(move_uploaded_file($ctemp,'../storage/posts/'.$csvFile))
+                    if(move_uploaded_file($ctemp,'../storage/posts/'.$imgFile))
                     {
                         
-                        array_push($images,$csvFile);
+                        array_push($images,$imgFile);
                     }
                 }
                 

@@ -48,7 +48,7 @@ class Ads{
             $this->city=htmlspecialchars(strip_tags($this->city));
             $this->state=htmlspecialchars(strip_tags($this->state));
             $this->landmark=htmlspecialchars(strip_tags($this->landmark));
-            $this->area="Chandannagar";
+            $this->area=htmlspecialchars(strip_tags($this->area));
 
             // to get time-stamp for 'created' field
             $this->timestamp = date('Y-m-d h:i:sa');

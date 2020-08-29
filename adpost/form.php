@@ -8,7 +8,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./public/css/forms/forms.css">
-    <script src="./public/js/forms/forms.js"></script>
+    <!-- <script src="./public/js/forms/forms.js"></script> -->
 
    <style>
     .modal-body{
@@ -50,7 +50,7 @@
                 <input type="text" id="adtitle" name="adtitle">
 
                 <label for="brand">Brand*</label>
-                <input type="text" id="brand" name="brand" placeholder="₹">
+                <input type="text" id="brand" name="brand" placeholder="">
 
                 <p class="terms">Mention the key features of your item (e.g. brand, model, age, type)</p>
                 <label for="Description">Description *</label>
@@ -155,10 +155,12 @@
                               <option value="Gujarat">Gujarat</option>
                               <option value="Goa">Goa</option>
                               <option value="Delhi">Delhi</option>
-                            </select>
-                          <h5 id="desc">City*</h4> 
-                        <input type="text" id="city" name="city" placeholder="Enter City" >   
-                      <h5 id="desc">Landmark*</h4>    
+                          </select>
+                      <h5 id="desc">City*</h5> 
+                        <input type="text" id="city" name="city" placeholder="Enter City" >
+                      <h5 id="desc">Area*</h5> 
+                        <input type="text" id="area" name="area" placeholder="Enter Area" >     
+                      <h5 id="desc">Landmark*</h5>    
                         <input type="text" id="landmark" name="city" placeholder="Enter Landmark" >              
                     </div>
                     
@@ -173,7 +175,7 @@
                <div id="reviewdetails">
                   <h3 class="head">REVIEW YOUR DETAILS</h3>
                   <h5 id="descs">Name</h4>
-                  <input type="text" id="namebox" name="nambebox" placeholder="Enter City" >   
+                  <input type="text" id="namebox" name="nambebox" placeholder="Enter Name" >   
 
                   <div class="note">
                     <h4>Let's verify your account</h4>
@@ -209,10 +211,10 @@
                           <label for="adtitle">Ad title*</label>
                           <input type="text" id="adt" disabled="true" ><br><br>
 
-                          <label for="brand">Brand*</label>
-                          <input type="text" id="brand" disabled="true" ><br><br>
+                          <label for="br">Brand*</label>
+                          <input type="text" id="br" disabled="true" ><br><br>
 
-                          <label for="Description">Description *</label>
+                          <label for="des">Description *</label>
                           <textarea id="des" disabled="true"></textarea><br><br>
 
                           <label for="price">SET A PRICE</label>
@@ -223,6 +225,9 @@
                           
                           <label>CITY:</label>
                           <input type="text" disabled="true" id="ci">
+
+                          <label>AREA:</label>
+                          <input type="text" disabled="true" id="ar">
 
                           <label>LANDMARK:</label>
                           <input type="text" disabled="true" id="land">
@@ -252,7 +257,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
-<script src="adpost.js"></script>
+<script src="./public/js/forms/addpost.js"></script>
 <script>
    
    
@@ -280,11 +285,12 @@
         var te=document.getElementById('description').value;
         console.log(te);
         document.getElementById('adt').value=document.getElementById('adtitle').value;
-        document.getElementById('brand').value=document.getElementById('brand').value;
+        document.getElementById('br').value=document.getElementById('brand').value;
         document.getElementById('des').value=te;
         document.getElementById('pri').value=document.getElementById('price').value;
         document.getElementById('sta').value=stat;
         document.getElementById('ci').value=document.getElementById('city').value;
+        document.getElementById('ar').value=document.getElementById('area').value;
         document.getElementById('land').value=document.getElementById('landmark').value;
         document.getElementById('nameb').value=document.getElementById('namebox').value;
         document.getElementById('nam').value=document.getElementById('namebox1').value;
@@ -310,6 +316,7 @@
       
           document.getElementById("List").style.display = "block";
           $("#sendotp").click(function(){
+            $('#namebox1').prop('disabled',true)
   
               var mobilenumber = $("#namebox1").val();
               $.ajax({
@@ -355,6 +362,10 @@
                       response = response.trim()
                       if(response == "success")
                       {
+                          alert("OTP Verified")
+                          $('#verify').hide()
+                          $('#sendotp').hide()
+                          $('#namebox2').prop('disabled',true)
                           $('#preview').prop('disabled',false)
   
                       }
@@ -393,11 +404,12 @@
     var brand = $("#brand").val();
     fd.append("title",$("#adtitle").val())
     fd.append("brand",$("#brand").val())
-    fd.append("desc",$("#Description").val())
+    fd.append("description",$("#description").val())
     fd.append("price",$("#price").val())
     fd.append("brand",$("#brand").val())
     fd.append("state",$("#state").val())
     fd.append("city",$("#city").val())
+    fd.append("area",$("#area").val())
     fd.append("landmark",$("#landmark").val())
     fd.append("name",$("#namebox").val())
     
@@ -449,6 +461,11 @@ else
       success: function(response){
         response = response.trim()
         console.log("Response",response)
+        if(response == "200")
+        {
+          alert("Advertisement Posted Successfully")
+          window.setTimeout(function(){location.reload()},1000)
+        }
       }
   })
 }

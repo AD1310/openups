@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2020 at 06:23 AM
+-- Generation Time: Aug 29, 2020 at 06:55 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -33,6 +33,14 @@ CREATE TABLE `adimgs` (
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `adimgs`
+--
+
+INSERT INTO `adimgs` (`aid`, `img`) VALUES
+(16, 'camera1.jpg'),
+(16, 'camera3.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +64,7 @@ CREATE TABLE `ads` (
 --
 
 INSERT INTO `ads` (`aid`, `title`, `description`, `brand`, `price`, `tperiod`, `visibility`, `uid`, `scid`) VALUES
-(7, 'Wrist Watch', 'my watch to sell', 'g shock', 5000, 30, 1, 3, 14);
+(16, 'Camera', '2 months old\nwith 2 lenses', 'Canon', 20000, 30, 1, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -100,7 +108,7 @@ CREATE TABLE `locations` (
 --
 
 INSERT INTO `locations` (`aid`, `state`, `city`, `area`, `landmark`) VALUES
-(7, 'Maharashtra', 'Pune', 'Chinchwad', 'Keshav Nagar');
+(16, 'Maharashtra', 'Pune', 'Chinchwad', 'Keshavnagar');
 
 -- --------------------------------------------------------
 
@@ -212,7 +220,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `aid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `aid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `cat`

@@ -1,5 +1,6 @@
 <?php 
 
+error_reporting(0);
     $scats = array(
         'saleH'=>array(1,'Properties','Sale:Houses & Apartment'),
         'renH'=>array(2,'Properties','Rent:Houses & Apartment'),
@@ -129,11 +130,16 @@
     {
         include('./productdetails.php');
     }
+
     else if(isset($_GET["logout"]))
     {
         include('login/logout.php');
     }
 
-
+    // Default case for any other input
+    else
+    {
+        header("refresh:0;url=./");
+    }
 
 ?>
